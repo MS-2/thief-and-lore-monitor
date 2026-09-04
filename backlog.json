@@ -1,120 +1,130 @@
 ﻿{
-    "project":  "Thief \u0026 Lore",
-    "daily_token_quota_target":  "20%",
-    "current_phase":  5,
-    "agent_status":  "idle",
-    "last_updated":  "2026-09-04T11:35:39",
-    "recently_completed":  [
-                               "TASK-001: Estructura base, repositorio GitHub y configuración inicial del proyecto",
-                               "TASK-002: Controlador 2D (PlayerController2D con dash y física Unity 6), Cámara suave (CameraFollow2D) y Gestor de Estados (GameManager)",
-                               "TASK-003: Sistema de Chunks y Streaming de Mundo 2D (ChunkManager y ChunkData con cálculo de biomas)",
-                               "TASK-004: Arquitectura de Items y Lore (ItemData ScriptableObject y sistema de Inventory con lore fragmentado)",
-                               "TASK-005: Bucle Roguelike, Balizas y Persistencia (RoguelikeLoopManager y Beacon con puntos de reaparición)",
-                               "TASK-006: Sistema de Combate e IA de Enemigos por Bioma (HealthSystem con i-frames y EnemyAI2D con estados y drop de loot)",
-                               "TASK-007: Generación de Build Automática para Test Diario (Build StandaloneWindows64 ejecutable compilado con éxito)"
-                           ],
-    "tasks":  [
-                  {
-                      "id":  "TASK-001",
-                      "phase":  1,
-                      "title":  "Estructura base y manifiesto de automatización",
-                      "status":  "completed",
-                      "summary":  "Repositorio GitHub, estructura de carpetas estándar y backlog atómico."
-                  },
-                  {
-                      "id":  "TASK-002",
-                      "phase":  1,
-                      "title":  "Controlador básico 2D y Cinemachine/URP Camera",
-                      "status":  "completed",
-                      "files":  [
-                                    "Assets/Scripts/Entities/PlayerController2D.cs",
-                                    "Assets/Scripts/Core/GameManager.cs",
-                                    "Assets/Scripts/Core/CameraFollow2D.cs"
-                                ],
-                      "acceptance_criteria":  "Movimiento 2D reactivo con Rigidbody2D.linearVelocity, dash con cooldown y GameManager singleton.",
-                      "verification":  "Compilación limpia en modo batch con Unity 6 (0 errores)."
-                  },
-                  {
-                      "id":  "TASK-003",
-                      "phase":  2,
-                      "title":  "Sistema de Chunks y Streaming de Mundo 2D",
-                      "status":  "completed",
-                      "files":  [
-                                    "Assets/Scripts/World/ChunkData.cs",
-                                    "Assets/Scripts/World/ChunkManager.cs"
-                                ],
-                      "acceptance_criteria":  "Carga/descarga dinámica de chunks por radio de visión alrededor del jugador.",
-                      "verification":  "Compilación limpia en Unity 6 y tests de coordenadas de chunk."
-                  },
-                  {
-                      "id":  "TASK-004",
-                      "phase":  3,
-                      "title":  "Arquitectura de Items y Lore (ScriptableObjects)",
-                      "status":  "completed",
-                      "files":  [
-                                    "Assets/Scripts/Items/ItemData.cs",
-                                    "Assets/Scripts/Items/Inventory.cs"
-                                ],
-                      "acceptance_criteria":  "Soporte de descripciones fragmentadas y tipos modulares.",
-                      "verification":  "Test de instanciación e inspección de datos."
-                  },
-                  {
-                      "id":  "TASK-005",
-                      "phase":  4,
-                      "title":  "Bucle Roguelike, Balizas y Persistencia",
-                      "status":  "completed",
-                      "files":  [
-                                    "Assets/Scripts/Core/RoguelikeLoopManager.cs",
-                                    "Assets/Scripts/World/Beacon.cs"
-                                ],
-                      "acceptance_criteria":  "Puntos de descanso y reinicio de run con conservación de lore.",
-                      "verification":  "Simulación de ciclo de muerte y respawn."
-                  },
-                  {
-                      "id":  "TASK-006",
-                      "phase":  5,
-                      "title":  "Sistema de Combate e IA de Enemigos por Bioma",
-                      "status":  "completed",
-                      "files":  [
-                                    "Assets/Scripts/Entities/HealthSystem.cs",
-                                    "Assets/Scripts/Entities/EnemyAI2D.cs"
-                                ],
-                      "acceptance_criteria":  "Enemigos patrullando en chunks activos y combate básico.",
-                      "verification":  "Compilación y validación de triggers de daño en batchmode."
-                  },
-                  {
-                      "id":  "TASK-007",
-                      "phase":  5,
-                      "title":  "Generación de Build Automática para Test Diario",
-                      "status":  "completed",
-                      "files":  [
-                                    "Builds/StandaloneWindows64/ThiefAndLore.exe"
-                                ],
-                      "acceptance_criteria":  "Ejecutable compilado al finalizar la cuota diaria.",
-                      "verification":  "Unity build StandaloneWindows64 finalizado exitosamente."
-                  },
-                  {
-                      "id":  "TASK-008",
-                      "phase":  6,
-                      "title":  "Códice de Lore e Interfaz de Inspección de Objetos",
-                      "status":  "pending",
-                      "files":  [
-                                    "Assets/Scripts/UI/CodexUI.cs",
-                                    "Assets/Scripts/UI/ItemInspectionPanel.cs"
-                                ],
-                      "acceptance_criteria":  "Panel con vista de lore primario y secundario críptico.",
-                      "verification":  "Compilación en batchmode y verificación de eventos de UI."
-                  },
-                  {
-                      "id":  "TASK-009",
-                      "phase":  6,
-                      "title":  "Generador Procedural de Estructuras y Ruinas en Chunks",
-                      "status":  "pending",
-                      "files":  [
-                                    "Assets/Scripts/World/StructureGenerator.cs"
-                                ],
-                      "acceptance_criteria":  "Aparición de monolitos, cofres arcanos y terminales según el bioma del chunk.",
-                      "verification":  "Test de instanciación en coordenadas de chunk."
-                  }
-              ]
+  "project": "Thief & Lore",
+  "daily_token_quota_target": "20%",
+  "current_phase": 5,
+  "agent_status": "idle",
+  "last_updated": "2026-09-04T11:40:00",
+  "total_estimated_tokens": "26.2k",
+  "recently_completed": [
+    "TASK-001: Estructura base, repositorio GitHub y configuración inicial (~2.5k tokens)",
+    "TASK-002: Controlador 2D, Cámara suave y Gestor de Estados (~4.8k tokens)",
+    "TASK-003: Sistema de Chunks y Streaming de Mundo 2D (~3.9k tokens)",
+    "TASK-004: Arquitectura de Items y Lore con ScriptableObjects (~3.4k tokens)",
+    "TASK-005: Bucle Roguelike, Balizas y Persistencia (~3.8k tokens)",
+    "TASK-006: Sistema de Combate e IA de Enemigos por Bioma (~4.6k tokens)",
+    "TASK-007: Generación de Build Automática StandaloneWindows64 (~3.2k tokens)"
+  ],
+  "tasks": [
+    {
+      "id": "TASK-001",
+      "phase": 1,
+      "title": "Estructura base y manifiesto de automatización",
+      "status": "completed",
+      "estimated_tokens": "2.5k",
+      "summary": "Repositorio GitHub, estructura de carpetas estándar y backlog atómico."
+    },
+    {
+      "id": "TASK-002",
+      "phase": 1,
+      "title": "Controlador básico 2D y Cinemachine/URP Camera",
+      "status": "completed",
+      "estimated_tokens": "4.8k",
+      "files": [
+        "Assets/Scripts/Entities/PlayerController2D.cs",
+        "Assets/Scripts/Core/GameManager.cs",
+        "Assets/Scripts/Core/CameraFollow2D.cs"
+      ],
+      "acceptance_criteria": "Movimiento 2D reactivo con Rigidbody2D.linearVelocity, dash con cooldown y GameManager singleton.",
+      "verification": "Compilación limpia en modo batch con Unity 6 (0 errores)."
+    },
+    {
+      "id": "TASK-003",
+      "phase": 2,
+      "title": "Sistema de Chunks y Streaming de Mundo 2D",
+      "status": "completed",
+      "estimated_tokens": "3.9k",
+      "files": [
+        "Assets/Scripts/World/ChunkData.cs",
+        "Assets/Scripts/World/ChunkManager.cs"
+      ],
+      "acceptance_criteria": "Carga/descarga dinámica de chunks por radio de visión alrededor del jugador.",
+      "verification": "Compilación limpia en Unity 6 y tests de coordenadas de chunk."
+    },
+    {
+      "id": "TASK-004",
+      "phase": 3,
+      "title": "Arquitectura de Items y Lore (ScriptableObjects)",
+      "status": "completed",
+      "estimated_tokens": "3.4k",
+      "files": [
+        "Assets/Scripts/Items/ItemData.cs",
+        "Assets/Scripts/Items/Inventory.cs"
+      ],
+      "acceptance_criteria": "Soporte de descripciones fragmentadas y tipos modulares.",
+      "verification": "Test de instanciación e inspección de datos."
+    },
+    {
+      "id": "TASK-005",
+      "phase": 4,
+      "title": "Bucle Roguelike, Balizas y Persistencia",
+      "status": "completed",
+      "estimated_tokens": "3.8k",
+      "files": [
+        "Assets/Scripts/Core/RoguelikeLoopManager.cs",
+        "Assets/Scripts/World/Beacon.cs"
+      ],
+      "acceptance_criteria": "Puntos de descanso y reinicio de run con conservación de lore.",
+      "verification": "Simulación de ciclo de muerte y respawn."
+    },
+    {
+      "id": "TASK-006",
+      "phase": 5,
+      "title": "Sistema de Combate e IA de Enemigos por Bioma",
+      "status": "completed",
+      "estimated_tokens": "4.6k",
+      "files": [
+        "Assets/Scripts/Entities/HealthSystem.cs",
+        "Assets/Scripts/Entities/EnemyAI2D.cs"
+      ],
+      "acceptance_criteria": "Enemigos patrullando en chunks activos y combate básico.",
+      "verification": "Compilación y validación de triggers de daño en batchmode."
+    },
+    {
+      "id": "TASK-007",
+      "phase": 5,
+      "title": "Generación de Build Automática para Test Diario",
+      "status": "completed",
+      "estimated_tokens": "3.2k",
+      "files": [
+        "Builds/StandaloneWindows64/ThiefAndLore.exe"
+      ],
+      "acceptance_criteria": "Ejecutable compilado al finalizar la cuota diaria.",
+      "verification": "Unity build StandaloneWindows64 finalizado exitosamente."
+    },
+    {
+      "id": "TASK-008",
+      "phase": 6,
+      "title": "Códice de Lore e Interfaz de Inspección de Objetos",
+      "status": "pending",
+      "estimated_tokens": "—",
+      "files": [
+        "Assets/Scripts/UI/CodexUI.cs",
+        "Assets/Scripts/UI/ItemInspectionPanel.cs"
+      ],
+      "acceptance_criteria": "Panel con vista de lore primario y secundario críptico.",
+      "verification": "Compilación en batchmode y verificación de eventos de UI."
+    },
+    {
+      "id": "TASK-009",
+      "phase": 6,
+      "title": "Generador Procedural de Estructuras y Ruinas en Chunks",
+      "status": "pending",
+      "estimated_tokens": "—",
+      "files": [
+        "Assets/Scripts/World/StructureGenerator.cs"
+      ],
+      "acceptance_criteria": "Aparición de monolitos, cofres arcanos y terminales según el bioma del chunk.",
+      "verification": "Test de instanciación en coordenadas de chunk."
+    }
+  ]
 }

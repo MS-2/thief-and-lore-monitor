@@ -15,6 +15,7 @@
       --success: #3fb950;
       --warning: #d29922;
       --danger: #f85149;
+      --purple: #bc8cff;
     }
     * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
     body { background-color: var(--bg); color: var(--text); padding: 16px; max-width: 640px; margin: 0 auto; line-height: 1.5; }
@@ -36,7 +37,9 @@
     .task-card { background: var(--card-bg); border: 1px solid var(--border); border-radius: 8px; padding: 12px; }
     .task-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px; }
     .task-id { font-size: 0.75rem; font-weight: 700; color: var(--accent); }
+    .task-badges { display: flex; align-items: center; gap: 6px; }
     .task-state { font-size: 0.7rem; font-weight: 600; padding: 2px 6px; border-radius: 4px; text-transform: uppercase; }
+    .task-tokens { font-size: 0.7rem; font-weight: 600; padding: 2px 6px; border-radius: 4px; background: rgba(188, 140, 255, 0.15); color: var(--purple); border: 1px solid rgba(188, 140, 255, 0.4); }
     .state-completed { background: rgba(63, 185, 80, 0.2); color: var(--success); }
     .state-in_progress { background: rgba(210, 153, 34, 0.2); color: var(--warning); }
     .state-pending { background: rgba(139, 148, 158, 0.2); color: var(--text-muted); }
@@ -65,16 +68,16 @@
       <div id="statProgress" class="stat-value">0/0</div>
     </div>
     <div class="stat-card">
-      <div class="stat-label">Fase Actual</div>
-      <div id="statPhase" class="stat-value">Fase 4</div>
+      <div class="stat-label">Tokens Usados (Est.)</div>
+      <div id="statTokens" class="stat-value" style="color: var(--purple);">--</div>
     </div>
     <div class="stat-card">
-      <div class="stat-label">Cuota Token Diaria</div>
-      <div id="statQuota" class="stat-value">20%</div>
+      <div class="stat-label">Fase Actual</div>
+      <div id="statPhase" class="stat-value">Fase 5</div>
     </div>
     <div class="stat-card">
       <div class="stat-label">Última Actividad</div>
-      <div id="statUpdated" class="stat-value" style="font-size: 0.9rem;">--:--</div>
+      <div id="statUpdated" class="stat-value" style="font-size: 0.95rem;">--:--</div>
     </div>
   </div>
 
@@ -111,8 +114,8 @@
 
       const completedCount = data.tasks.filter(t => t.status === 'completed').length;
       document.getElementById('statProgress').innerText = `${completedCount}/${data.tasks.length}`;
+      document.getElementById('statTokens').innerText = `~${data.total_estimated_tokens || '0k'}`;
       document.getElementById('statPhase').innerText = `Fase ${data.current_phase}`;
-      document.getElementById('statQuota').innerText = data.daily_token_quota_target || '20%';
       document.getElementById('statUpdated').innerText = data.last_updated ? data.last_updated.split('T')[1] : '--:--';
 
       const recentContainer = document.getElementById('recentList');
@@ -129,10 +132,16 @@
       data.tasks.forEach(task => {
         const div = document.createElement('div');
         div.className = 'task-card';
+        const tokensBadge = task.estimated_tokens && task.estimated_tokens !== '—' 
+          ? `<span class="task-tokens">~${task.estimated_tokens} tokens</span>` 
+          : '';
         div.innerHTML = `
           <div class="task-header">
             <span class="task-id">${task.id} · Fase ${task.phase}</span>
-            <span class="task-state state-${task.status}">${task.status.replace('_', ' ')}</span>
+            <div class="task-badges">
+              ${tokensBadge}
+              <span class="task-state state-${task.status}">${task.status.replace('_', ' ')}</span>
+            </div>
           </div>
           <div class="task-title">${task.title}</div>
           <div class="task-desc">${task.acceptance_criteria || task.summary || ''}</div>
