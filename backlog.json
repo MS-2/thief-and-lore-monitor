@@ -2,15 +2,16 @@
     "project":  "Thief \u0026 Lore",
     "daily_token_quota_target":  "20%",
     "current_phase":  5,
-    "agent_status":  "working",
-    "last_updated":  "2026-09-04T11:32:48",
+    "agent_status":  "idle",
+    "last_updated":  "2026-09-04T11:35:39",
     "recently_completed":  [
                                "TASK-001: Estructura base, repositorio GitHub y configuración inicial del proyecto",
                                "TASK-002: Controlador 2D (PlayerController2D con dash y física Unity 6), Cámara suave (CameraFollow2D) y Gestor de Estados (GameManager)",
                                "TASK-003: Sistema de Chunks y Streaming de Mundo 2D (ChunkManager y ChunkData con cálculo de biomas)",
                                "TASK-004: Arquitectura de Items y Lore (ItemData ScriptableObject y sistema de Inventory con lore fragmentado)",
                                "TASK-005: Bucle Roguelike, Balizas y Persistencia (RoguelikeLoopManager y Beacon con puntos de reaparición)",
-                               "TASK-006: Sistema de Combate e IA de Enemigos por Bioma (HealthSystem con i-frames y EnemyAI2D con estados y drop de loot)"
+                               "TASK-006: Sistema de Combate e IA de Enemigos por Bioma (HealthSystem con i-frames y EnemyAI2D con estados y drop de loot)",
+                               "TASK-007: Generación de Build Automática para Test Diario (Build StandaloneWindows64 ejecutable compilado con éxito)"
                            ],
     "tasks":  [
                   {
@@ -85,12 +86,35 @@
                       "id":  "TASK-007",
                       "phase":  5,
                       "title":  "Generación de Build Automática para Test Diario",
-                      "status":  "pending",
+                      "status":  "completed",
                       "files":  [
-                                    "Builds/StandaloneWindows64"
+                                    "Builds/StandaloneWindows64/ThiefAndLore.exe"
                                 ],
                       "acceptance_criteria":  "Ejecutable compilado al finalizar la cuota diaria.",
-                      "verification":  "Ejecución de unity build StandaloneWindows64."
+                      "verification":  "Unity build StandaloneWindows64 finalizado exitosamente."
+                  },
+                  {
+                      "id":  "TASK-008",
+                      "phase":  6,
+                      "title":  "Códice de Lore e Interfaz de Inspección de Objetos",
+                      "status":  "pending",
+                      "files":  [
+                                    "Assets/Scripts/UI/CodexUI.cs",
+                                    "Assets/Scripts/UI/ItemInspectionPanel.cs"
+                                ],
+                      "acceptance_criteria":  "Panel con vista de lore primario y secundario críptico.",
+                      "verification":  "Compilación en batchmode y verificación de eventos de UI."
+                  },
+                  {
+                      "id":  "TASK-009",
+                      "phase":  6,
+                      "title":  "Generador Procedural de Estructuras y Ruinas en Chunks",
+                      "status":  "pending",
+                      "files":  [
+                                    "Assets/Scripts/World/StructureGenerator.cs"
+                                ],
+                      "acceptance_criteria":  "Aparición de monolitos, cofres arcanos y terminales según el bioma del chunk.",
+                      "verification":  "Test de instanciación en coordenadas de chunk."
                   }
               ]
 }
