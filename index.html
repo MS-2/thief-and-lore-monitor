@@ -1,0 +1,148 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Thief & Lore - Dev Monitor</title>
+  <style>
+    :root {
+      --bg: #0d1117;
+      --card-bg: #161b22;
+      --border: #30363d;
+      --text: #c9d1d9;
+      --text-muted: #8b949e;
+      --accent: #58a6ff;
+      --success: #3fb950;
+      --warning: #d29922;
+      --danger: #f85149;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
+    body { background-color: var(--bg); color: var(--text); padding: 16px; max-width: 640px; margin: 0 auto; line-height: 1.5; }
+    header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; padding-bottom: 12px; border-bottom: 1px solid var(--border); }
+    h1 { font-size: 1.25rem; font-weight: 700; color: #fff; }
+    .status-badge { display: inline-flex; align-items: center; gap: 6px; padding: 4px 10px; border-radius: 20px; font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; }
+    .status-idle { background: rgba(63, 185, 80, 0.15); color: var(--success); border: 1px solid var(--success); }
+    .status-working { background: rgba(210, 153, 34, 0.15); color: var(--warning); border: 1px solid var(--warning); animation: pulse 1.5s infinite; }
+    .status-dot { width: 8px; height: 8px; border-radius: 50%; background: currentColor; }
+    @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.5; } }
+    .grid-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 20px; }
+    .stat-card { background: var(--card-bg); border: 1px solid var(--border); border-radius: 8px; padding: 12px; }
+    .stat-label { font-size: 0.75rem; color: var(--text-muted); text-transform: uppercase; margin-bottom: 4px; }
+    .stat-value { font-size: 1.2rem; font-weight: 700; color: #fff; }
+    .section-title { font-size: 0.95rem; font-weight: 700; color: #fff; margin: 18px 0 10px 0; display: flex; justify-content: space-between; align-items: center; }
+    .recent-list { display: flex; flex-direction: column; gap: 8px; margin-bottom: 20px; }
+    .recent-item { background: var(--card-bg); border-left: 3px solid var(--accent); border: 1px solid var(--border); border-left-width: 3px; border-radius: 6px; padding: 10px 12px; font-size: 0.85rem; }
+    .tasks-list { display: flex; flex-direction: column; gap: 10px; }
+    .task-card { background: var(--card-bg); border: 1px solid var(--border); border-radius: 8px; padding: 12px; }
+    .task-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px; }
+    .task-id { font-size: 0.75rem; font-weight: 700; color: var(--accent); }
+    .task-state { font-size: 0.7rem; font-weight: 600; padding: 2px 6px; border-radius: 4px; text-transform: uppercase; }
+    .state-completed { background: rgba(63, 185, 80, 0.2); color: var(--success); }
+    .state-in_progress { background: rgba(210, 153, 34, 0.2); color: var(--warning); }
+    .state-pending { background: rgba(139, 148, 158, 0.2); color: var(--text-muted); }
+    .task-title { font-size: 0.9rem; font-weight: 600; color: #fff; margin-bottom: 4px; }
+    .task-desc { font-size: 0.8rem; color: var(--text-muted); }
+    .footer { text-align: center; margin-top: 30px; font-size: 0.75rem; color: var(--text-muted); padding-top: 15px; border-top: 1px solid var(--border); }
+    .btn-refresh { background: var(--card-bg); border: 1px solid var(--border); color: var(--text); padding: 4px 10px; border-radius: 6px; font-size: 0.75rem; cursor: pointer; }
+    .btn-refresh:active { background: var(--border); }
+  </style>
+</head>
+<body>
+  <header>
+    <div>
+      <h1>Thief & Lore</h1>
+      <div style="font-size: 0.75rem; color: var(--text-muted);">Roguelike 2D Dev Monitor</div>
+    </div>
+    <div id="statusBadge" class="status-badge status-idle">
+      <span class="status-dot"></span>
+      <span id="statusText">En reposo</span>
+    </div>
+  </header>
+
+  <div class="grid-stats">
+    <div class="stat-card">
+      <div class="stat-label">Progreso Backlog</div>
+      <div id="statProgress" class="stat-value">0/0</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-label">Fase Actual</div>
+      <div id="statPhase" class="stat-value">Fase 4</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-label">Cuota Token Diaria</div>
+      <div id="statQuota" class="stat-value">20%</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-label">Última Actividad</div>
+      <div id="statUpdated" class="stat-value" style="font-size: 0.9rem;">--:--</div>
+    </div>
+  </div>
+
+  <div class="section-title">
+    <span>Últimas Implementaciones</span>
+    <button class="btn-refresh" onclick="loadData()">Actualizar</button>
+  </div>
+  <div id="recentList" class="recent-list"></div>
+
+  <div class="section-title">Tareas del Proyecto</div>
+  <div id="tasksList" class="tasks-list"></div>
+
+  <div class="footer">
+    Auto-refresco cada 30 segundos · <a href="https://github.com/MS-2/thief-and-lore" target="_blank" style="color: var(--accent); text-decoration: none;">Ver Repositorio</a>
+  </div>
+
+  <script>
+    async function loadData() {
+      try {
+        const res = await fetch('backlog.json?t=' + Date.now());
+        if (!res.ok) throw new Error('No se pudo cargar backlog.json');
+        const data = await res.json();
+        render(data);
+      } catch (err) {
+        console.error(err);
+      }
+    }
+
+    function render(data) {
+      const isWorking = data.agent_status === 'working';
+      const badge = document.getElementById('statusBadge');
+      badge.className = 'status-badge ' + (isWorking ? 'status-working' : 'status-idle');
+      document.getElementById('statusText').innerText = isWorking ? 'Trabajando...' : 'En reposo';
+
+      const completedCount = data.tasks.filter(t => t.status === 'completed').length;
+      document.getElementById('statProgress').innerText = `${completedCount}/${data.tasks.length}`;
+      document.getElementById('statPhase').innerText = `Fase ${data.current_phase}`;
+      document.getElementById('statQuota').innerText = data.daily_token_quota_target || '20%';
+      document.getElementById('statUpdated').innerText = data.last_updated ? data.last_updated.split('T')[1] : '--:--';
+
+      const recentContainer = document.getElementById('recentList');
+      recentContainer.innerHTML = '';
+      (data.recently_completed || []).forEach(item => {
+        const div = document.createElement('div');
+        div.className = 'recent-item';
+        div.innerText = item;
+        recentContainer.appendChild(div);
+      });
+
+      const tasksContainer = document.getElementById('tasksList');
+      tasksContainer.innerHTML = '';
+      data.tasks.forEach(task => {
+        const div = document.createElement('div');
+        div.className = 'task-card';
+        div.innerHTML = `
+          <div class="task-header">
+            <span class="task-id">${task.id} · Fase ${task.phase}</span>
+            <span class="task-state state-${task.status}">${task.status.replace('_', ' ')}</span>
+          </div>
+          <div class="task-title">${task.title}</div>
+          <div class="task-desc">${task.acceptance_criteria || task.summary || ''}</div>
+        `;
+        tasksContainer.appendChild(div);
+      });
+    }
+
+    loadData();
+    setInterval(loadData, 30000);
+  </script>
+</body>
+</html>
