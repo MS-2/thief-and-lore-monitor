@@ -1,10 +1,10 @@
 ﻿{
     "project":  "Thief \u0026 Lore",
     "daily_token_quota_target":  "20%",
-    "current_phase":  9,
-    "agent_status":  "working",
-    "last_updated":  "2026-09-05T02:55:17",
-    "total_estimated_tokens":  "53.1k",
+    "current_phase":  10,
+    "agent_status":  "idle",
+    "last_updated":  "2026-09-05T02:57:20",
+    "total_estimated_tokens":  "60.0k",
     "recently_completed":  [
                                "TASK-001: Estructura base, repositorio GitHub y configuración inicial (~2.5k tokens)",
                                "TASK-002: Controlador 2D, Cámara suave y Gestor de Estados (~4.8k tokens)",
@@ -20,7 +20,9 @@
                                "TASK-012: Cofres de Botín e Interacciones de Exploración 2D (~3.4k tokens)",
                                "TASK-013: Sistema de Niebla de Guerra y Cartografía 2D (~3.2k tokens)",
                                "TASK-014: Sistema de Reliquias Pasivas y Bonificadores de Exploración (~3.5k tokens)",
-                               "TASK-015: Brújula y HUD de Navegación de Puntos de Interés (~3.3k tokens)"
+                               "TASK-015: Brújula y HUD de Navegación de Puntos de Interés (~3.3k tokens)",
+                               "TASK-016: Habilidades Activas, Proyectiles Arcanos y Ondas de Pulso (~3.8k tokens)",
+                               "TASK-017: HUD de Recursos en Vivo (Salud, Maná/Energía y Cooldowns) (~3.1k tokens)"
                            ],
     "tasks":  [
                   {
@@ -210,14 +212,39 @@
                   {
                       "id":  "TASK-016",
                       "phase":  10,
-                      "title":  "Sistema de Habilidades Activas y Catalizadores Mágicos/Cibernéticos",
+                      "title":  "Habilidades Activas, Proyectiles Arcanos y Ondas de Pulso",
+                      "status":  "completed",
+                      "estimated_tokens":  "3.8k",
+                      "files":  [
+                                    "Assets/Scripts/Entities/AbilitySystem2D.cs",
+                                    "Assets/Scripts/Entities/Projectile2D.cs"
+                                ],
+                      "acceptance_criteria":  "Disparo direccional de proyectiles y onda de pulso de área con consumo de energía.",
+                      "verification":  "Validación física y detección de impactos en batchmode."
+                  },
+                  {
+                      "id":  "TASK-017",
+                      "phase":  10,
+                      "title":  "HUD de Recursos en Vivo (Salud, Maná/Energía y Cooldowns)",
+                      "status":  "completed",
+                      "estimated_tokens":  "3.1k",
+                      "files":  [
+                                    "Assets/Scripts/UI/PlayerStatusHUD.cs"
+                                ],
+                      "acceptance_criteria":  "Barras reactivas de salud y energía en pantalla sincronizadas con eventos.",
+                      "verification":  "Compilación limpia en batchmode de Unity 6."
+                  },
+                  {
+                      "id":  "TASK-018",
+                      "phase":  11,
+                      "title":  "Director de Encuentros y Mazmorras Procedurales",
                       "status":  "pending",
                       "estimated_tokens":  "—",
                       "files":  [
-                                    "Assets/Scripts/Entities/AbilitySystem2D.cs"
+                                    "Assets/Scripts/World/DungeonEncounterDirector.cs"
                                 ],
-                      "acceptance_criteria":  "Lanzamiento de proyectiles arcanos y pulsos electromagnéticos con cooldown y coste.",
-                      "verification":  "Validación en batchmode y spawning de proyectiles 2D."
+                      "acceptance_criteria":  "Spawning adaptativo de oleadas y eventos de combate al entrar a cámaras de ruinas.",
+                      "verification":  "Test de spawning y limpieza de sala en Unity 6."
                   }
               ]
 }
