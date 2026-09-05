@@ -1,10 +1,10 @@
-﻿{
+{
     "project":  "Thief \u0026 Lore",
     "daily_token_quota_target":  "25%",
-    "current_phase":  15,
+    "current_phase":  16,
     "agent_status":  "idle",
-    "last_updated":  "2026-09-05T11:33:38",
-    "total_estimated_tokens":  "97.4k",
+    "last_updated":  "2026-09-05T11:45:00",
+    "total_estimated_tokens":  "100.9k",
     "recently_completed":  [
                                "TASK-001: Estructura base, repositorio GitHub y configuraciÃ³n inicial (~2.5k tokens)",
                                "TASK-002: Controlador 2D, CÃ¡mara suave y Gestor de Estados (~4.8k tokens)",
@@ -32,7 +32,8 @@
                                "TASK-024: MÃ¡quina de Estados de Jefe y Patrones de Ataque 2D (~4.8k tokens)",
                                "TASK-025: HUD de Barra de Vida de Jefe y Telegrafiado Visual (~3.2k tokens)",
                                "TASK-026: Sistema de PartÃ­culas y VFX Procedurales 2D de Impacto (~3.5k tokens)",
-                               "TASK-027: Pantalla Inicial de Controles y Soporte Multi-dispositivo (~4.1k tokens)"
+                               "TASK-027: Pantalla Inicial de Controles y Soporte Multi-dispositivo (~4.1k tokens)",
+                               "TASK-028: Sistema de Efectos de Estado y DaÃ±o Elemental (~3.5k tokens)"
                            ],
     "tasks":  [
                   {
@@ -370,8 +371,8 @@
                       "id":  "TASK-028",
                       "phase":  16,
                       "title":  "Sistema de Efectos de Estado y DaÃ±o Elemental",
-                      "status":  "pending",
-                      "estimated_tokens":  "â€”",
+                      "status":  "completed",
+                      "estimated_tokens":  "3.5k",
                       "files":  [
                                     "Assets/Scripts/Entities/StatusEffectSystem.cs"
                                 ],
@@ -379,7 +380,7 @@
                       "verification":  "ValidaciÃ³n de ticks de daÃ±o y caducidad de estados."
                   },
                   {
-                      "id":  "TASK-028",
+                      "id":  "TASK-029",
                       "phase":  17,
                       "title":  "Armas Secundarias y Alternancia de Estilos",
                       "status":  "pending",
