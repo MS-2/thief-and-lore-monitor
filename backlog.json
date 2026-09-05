@@ -1,44 +1,46 @@
 ﻿{
     "project":  "Thief \u0026 Lore",
     "daily_token_quota_target":  "20%",
-    "current_phase":  11,
-    "agent_status":  "working",
-    "last_updated":  "2026-09-05T09:49:19",
-    "total_estimated_tokens":  "67.1k",
+    "current_phase":  12,
+    "agent_status":  "idle",
+    "last_updated":  "2026-09-05T09:52:11",
+    "total_estimated_tokens":  "74.0k",
     "recently_completed":  [
-                               "TASK-001: Estructura base, repositorio GitHub y configuración inicial (~2.5k tokens)",
-                               "TASK-002: Controlador 2D, Cámara suave y Gestor de Estados (~4.8k tokens)",
+                               "TASK-001: Estructura base, repositorio GitHub y configuraciÃ³n inicial (~2.5k tokens)",
+                               "TASK-002: Controlador 2D, CÃ¡mara suave y Gestor de Estados (~4.8k tokens)",
                                "TASK-003: Sistema de Chunks y Streaming de Mundo 2D (~3.9k tokens)",
                                "TASK-004: Arquitectura de Items y Lore con ScriptableObjects (~3.4k tokens)",
                                "TASK-005: Bucle Roguelike, Balizas y Persistencia (~3.8k tokens)",
                                "TASK-006: Sistema de Combate e IA de Enemigos por Bioma (~4.6k tokens)",
-                               "TASK-007: Generación de Build Automática StandaloneWindows64 (~3.2k tokens)",
-                               "TASK-008: Códice de Lore e Interfaz de Inspección estilo FromSoftware (~3.6k tokens)",
+                               "TASK-007: GeneraciÃ³n de Build AutomÃ¡tica StandaloneWindows64 (~3.2k tokens)",
+                               "TASK-008: CÃ³dice de Lore e Interfaz de InspecciÃ³n estilo FromSoftware (~3.6k tokens)",
                                "TASK-009: Generador Procedural de Estructuras y Ruinas en Chunks (~3.1k tokens)",
-                               "TASK-010: Atmósfera Sonora y VFX de Iluminación 2D por Bioma (~3.3k tokens)",
+                               "TASK-010: AtmÃ³sfera Sonora y VFX de IluminaciÃ³n 2D por Bioma (~3.3k tokens)",
                                "TASK-011: Sistema de Guardado y Persistencia en JSON (~3.5k tokens)",
-                               "TASK-012: Cofres de Botín e Interacciones de Exploración 2D (~3.4k tokens)",
-                               "TASK-013: Sistema de Niebla de Guerra y Cartografía 2D (~3.2k tokens)",
-                               "TASK-014: Sistema de Reliquias Pasivas y Bonificadores de Exploración (~3.5k tokens)",
-                               "TASK-015: Brújula y HUD de Navegación de Puntos de Interés (~3.3k tokens)",
+                               "TASK-012: Cofres de BotÃ­n e Interacciones de ExploraciÃ³n 2D (~3.4k tokens)",
+                               "TASK-013: Sistema de Niebla de Guerra y CartografÃ­a 2D (~3.2k tokens)",
+                               "TASK-014: Sistema de Reliquias Pasivas y Bonificadores de ExploraciÃ³n (~3.5k tokens)",
+                               "TASK-015: BrÃºjula y HUD de NavegaciÃ³n de Puntos de InterÃ©s (~3.3k tokens)",
                                "TASK-016: Habilidades Activas, Proyectiles Arcanos y Ondas de Pulso (~3.8k tokens)",
-                               "TASK-017: HUD de Recursos en Vivo (Salud, Maná/Energía y Cooldowns) (~3.1k tokens)",
+                               "TASK-017: HUD de Recursos en Vivo (Salud, ManÃ¡/EnergÃ­a y Cooldowns) (~3.1k tokens)",
                                "TASK-018: Barreras Arcanas Sellables y Puertas de Combate (~3.2k tokens)",
-                               "TASK-019: Director de Encuentros y Oleadas en Mazmorras con Cofre de Recompensa (~3.9k tokens)"
+                               "TASK-019: Director de Encuentros y Oleadas en Mazmorras con Cofre de Recompensa (~3.9k tokens)",
+                               "TASK-020: MenÃº de Pausa, Opciones y Resumen de EstadÃ­sticas (~3.4k tokens)",
+                               "TASK-021: SÃ­ntesis de Audio Procedural 2D en Tiempo Real (~3.5k tokens)"
                            ],
     "tasks":  [
                   {
                       "id":  "TASK-001",
                       "phase":  1,
-                      "title":  "Estructura base y manifiesto de automatización",
+                      "title":  "Estructura base y manifiesto de automatizaciÃ³n",
                       "status":  "completed",
                       "estimated_tokens":  "2.5k",
-                      "summary":  "Repositorio GitHub, estructura de carpetas estándar y backlog atómico."
+                      "summary":  "Repositorio GitHub, estructura de carpetas estÃ¡ndar y backlog atÃ³mico."
                   },
                   {
                       "id":  "TASK-002",
                       "phase":  1,
-                      "title":  "Controlador básico 2D y Cinemachine/URP Camera",
+                      "title":  "Controlador bÃ¡sico 2D y Cinemachine/URP Camera",
                       "status":  "completed",
                       "estimated_tokens":  "4.8k",
                       "files":  [
@@ -47,7 +49,7 @@
                                     "Assets/Scripts/Core/CameraFollow2D.cs"
                                 ],
                       "acceptance_criteria":  "Movimiento 2D reactivo con Rigidbody2D.linearVelocity, dash con cooldown y GameManager singleton.",
-                      "verification":  "Compilación limpia en modo batch con Unity 6 (0 errores)."
+                      "verification":  "CompilaciÃ³n limpia en modo batch con Unity 6 (0 errores)."
                   },
                   {
                       "id":  "TASK-003",
@@ -59,8 +61,8 @@
                                     "Assets/Scripts/World/ChunkData.cs",
                                     "Assets/Scripts/World/ChunkManager.cs"
                                 ],
-                      "acceptance_criteria":  "Carga/descarga dinámica de chunks por radio de visión alrededor del jugador.",
-                      "verification":  "Compilación limpia en Unity 6 y tests de coordenadas de chunk."
+                      "acceptance_criteria":  "Carga/descarga dinÃ¡mica de chunks por radio de visiÃ³n alrededor del jugador.",
+                      "verification":  "CompilaciÃ³n limpia en Unity 6 y tests de coordenadas de chunk."
                   },
                   {
                       "id":  "TASK-004",
@@ -73,7 +75,7 @@
                                     "Assets/Scripts/Items/Inventory.cs"
                                 ],
                       "acceptance_criteria":  "Soporte de descripciones fragmentadas y tipos modulares.",
-                      "verification":  "Test de instanciación e inspección de datos."
+                      "verification":  "Test de instanciaciÃ³n e inspecciÃ³n de datos."
                   },
                   {
                       "id":  "TASK-005",
@@ -85,8 +87,8 @@
                                     "Assets/Scripts/Core/RoguelikeLoopManager.cs",
                                     "Assets/Scripts/World/Beacon.cs"
                                 ],
-                      "acceptance_criteria":  "Puntos de descanso y reinicio de run con conservación de lore.",
-                      "verification":  "Simulación de ciclo de muerte y respawn."
+                      "acceptance_criteria":  "Puntos de descanso y reinicio de run con conservaciÃ³n de lore.",
+                      "verification":  "SimulaciÃ³n de ciclo de muerte y respawn."
                   },
                   {
                       "id":  "TASK-006",
@@ -98,13 +100,13 @@
                                     "Assets/Scripts/Entities/HealthSystem.cs",
                                     "Assets/Scripts/Entities/EnemyAI2D.cs"
                                 ],
-                      "acceptance_criteria":  "Enemigos patrullando en chunks activos y combate básico.",
-                      "verification":  "Compilación y validación de triggers de daño en batchmode."
+                      "acceptance_criteria":  "Enemigos patrullando en chunks activos y combate bÃ¡sico.",
+                      "verification":  "CompilaciÃ³n y validaciÃ³n de triggers de daÃ±o en batchmode."
                   },
                   {
                       "id":  "TASK-007",
                       "phase":  5,
-                      "title":  "Generación de Build Automática para Test Diario",
+                      "title":  "GeneraciÃ³n de Build AutomÃ¡tica para Test Diario",
                       "status":  "completed",
                       "estimated_tokens":  "3.2k",
                       "files":  [
@@ -116,15 +118,15 @@
                   {
                       "id":  "TASK-008",
                       "phase":  6,
-                      "title":  "Códice de Lore e Interfaz de Inspección de Objetos",
+                      "title":  "CÃ³dice de Lore e Interfaz de InspecciÃ³n de Objetos",
                       "status":  "completed",
                       "estimated_tokens":  "3.6k",
                       "files":  [
                                     "Assets/Scripts/UI/CodexUI.cs",
                                     "Assets/Scripts/UI/ItemInspectionPanel.cs"
                                 ],
-                      "acceptance_criteria":  "Panel con vista de lore primario y secundario críptico con alternancia rápida.",
-                      "verification":  "Compilación en batchmode y verificación de eventos de UI."
+                      "acceptance_criteria":  "Panel con vista de lore primario y secundario crÃ­ptico con alternancia rÃ¡pida.",
+                      "verification":  "CompilaciÃ³n en batchmode y verificaciÃ³n de eventos de UI."
                   },
                   {
                       "id":  "TASK-009",
@@ -135,20 +137,20 @@
                       "files":  [
                                     "Assets/Scripts/World/StructureGenerator.cs"
                                 ],
-                      "acceptance_criteria":  "Aparición determinista de monolitos, cofres arcanos y terminales según el bioma.",
-                      "verification":  "Test de instanciación en coordenadas de chunk."
+                      "acceptance_criteria":  "ApariciÃ³n determinista de monolitos, cofres arcanos y terminales segÃºn el bioma.",
+                      "verification":  "Test de instanciaciÃ³n en coordenadas de chunk."
                   },
                   {
                       "id":  "TASK-010",
                       "phase":  7,
-                      "title":  "Atmósfera Sonora y VFX de Iluminación 2D por Bioma",
+                      "title":  "AtmÃ³sfera Sonora y VFX de IluminaciÃ³n 2D por Bioma",
                       "status":  "completed",
                       "estimated_tokens":  "3.3k",
                       "files":  [
                                     "Assets/Scripts/Core/BiomeAtmosphereController.cs"
                                 ],
-                      "acceptance_criteria":  "Transiciones de iluminación URP 2D y audio ambiental al cambiar de región.",
-                      "verification":  "Verificación limpia en batchmode."
+                      "acceptance_criteria":  "Transiciones de iluminaciÃ³n URP 2D y audio ambiental al cambiar de regiÃ³n.",
+                      "verification":  "VerificaciÃ³n limpia en batchmode."
                   },
                   {
                       "id":  "TASK-011",
@@ -160,56 +162,56 @@
                                     "Assets/Scripts/Core/SaveManager.cs",
                                     "Assets/Scripts/Core/SaveData.cs"
                                 ],
-                      "acceptance_criteria":  "Serialización de runs, balizas descubiertas y códice de items a disco.",
-                      "verification":  "Validación de ciclo de serialización en Unity 6."
+                      "acceptance_criteria":  "SerializaciÃ³n de runs, balizas descubiertas y cÃ³dice de items a disco.",
+                      "verification":  "ValidaciÃ³n de ciclo de serializaciÃ³n en Unity 6."
                   },
                   {
                       "id":  "TASK-012",
                       "phase":  8,
-                      "title":  "Cofres de Botín e Interacciones de Exploración 2D",
+                      "title":  "Cofres de BotÃ­n e Interacciones de ExploraciÃ³n 2D",
                       "status":  "completed",
                       "estimated_tokens":  "3.4k",
                       "files":  [
                                     "Assets/Scripts/World/LootChest2D.cs"
                                 ],
                       "acceptance_criteria":  "Cofres arcanos interactuables con apertura y entrega de reliquias/lore persistente.",
-                      "verification":  "Validación de trigger de interacción y auto-inspección."
+                      "verification":  "ValidaciÃ³n de trigger de interacciÃ³n y auto-inspecciÃ³n."
                   },
                   {
                       "id":  "TASK-013",
                       "phase":  8,
-                      "title":  "Sistema de Niebla de Guerra y Cartografía 2D",
+                      "title":  "Sistema de Niebla de Guerra y CartografÃ­a 2D",
                       "status":  "completed",
                       "estimated_tokens":  "3.2k",
                       "files":  [
                                     "Assets/Scripts/World/FogOfWar2D.cs"
                                 ],
-                      "acceptance_criteria":  "Mapeo dinámico de coordenadas de chunks explorados con porcentaje global.",
-                      "verification":  "Test de eventos de exploración y hashset en Unity 6."
+                      "acceptance_criteria":  "Mapeo dinÃ¡mico de coordenadas de chunks explorados con porcentaje global.",
+                      "verification":  "Test de eventos de exploraciÃ³n y hashset en Unity 6."
                   },
                   {
                       "id":  "TASK-014",
                       "phase":  9,
-                      "title":  "Sistema de Reliquias Pasivas y Bonificadores de Exploración",
+                      "title":  "Sistema de Reliquias Pasivas y Bonificadores de ExploraciÃ³n",
                       "status":  "completed",
                       "estimated_tokens":  "3.5k",
                       "files":  [
                                     "Assets/Scripts/Items/RelicSystem.cs"
                                 ],
-                      "acceptance_criteria":  "Equipamiento de reliquias arcanas/cibernéticas con efectos pasivos acumulativos.",
-                      "verification":  "Compilación y cálculo de modificadores en Unity 6."
+                      "acceptance_criteria":  "Equipamiento de reliquias arcanas/cibernÃ©ticas con efectos pasivos acumulativos.",
+                      "verification":  "CompilaciÃ³n y cÃ¡lculo de modificadores en Unity 6."
                   },
                   {
                       "id":  "TASK-015",
                       "phase":  9,
-                      "title":  "Brújula y HUD de Navegación de Puntos de Interés",
+                      "title":  "BrÃºjula y HUD de NavegaciÃ³n de Puntos de InterÃ©s",
                       "status":  "completed",
                       "estimated_tokens":  "3.3k",
                       "files":  [
                                     "Assets/Scripts/UI/ExplorationCompassUI.cs"
                                 ],
                       "acceptance_criteria":  "Seguimiento angular relativo a balizas activadas y puntos clave en pantalla.",
-                      "verification":  "Compilación en batchmode y verificación de coordenadas angulares."
+                      "verification":  "CompilaciÃ³n en batchmode y verificaciÃ³n de coordenadas angulares."
                   },
                   {
                       "id":  "TASK-016",
@@ -221,20 +223,20 @@
                                     "Assets/Scripts/Entities/AbilitySystem2D.cs",
                                     "Assets/Scripts/Entities/Projectile2D.cs"
                                 ],
-                      "acceptance_criteria":  "Disparo direccional de proyectiles y onda de pulso de área con consumo de energía.",
-                      "verification":  "Validación física y detección de impactos en batchmode."
+                      "acceptance_criteria":  "Disparo direccional de proyectiles y onda de pulso de Ã¡rea con consumo de energÃ­a.",
+                      "verification":  "ValidaciÃ³n fÃ­sica y detecciÃ³n de impactos en batchmode."
                   },
                   {
                       "id":  "TASK-017",
                       "phase":  10,
-                      "title":  "HUD de Recursos en Vivo (Salud, Maná/Energía y Cooldowns)",
+                      "title":  "HUD de Recursos en Vivo (Salud, ManÃ¡/EnergÃ­a y Cooldowns)",
                       "status":  "completed",
                       "estimated_tokens":  "3.1k",
                       "files":  [
                                     "Assets/Scripts/UI/PlayerStatusHUD.cs"
                                 ],
-                      "acceptance_criteria":  "Barras reactivas de salud y energía en pantalla sincronizadas con eventos.",
-                      "verification":  "Compilación limpia en batchmode de Unity 6."
+                      "acceptance_criteria":  "Barras reactivas de salud y energÃ­a en pantalla sincronizadas con eventos.",
+                      "verification":  "CompilaciÃ³n limpia en batchmode de Unity 6."
                   },
                   {
                       "id":  "TASK-018",
@@ -245,8 +247,8 @@
                       "files":  [
                                     "Assets/Scripts/World/ArcaneBarrier2D.cs"
                                 ],
-                      "acceptance_criteria":  "Bloqueo físico/energético reactivo durante enfrentamientos en cámaras.",
-                      "verification":  "Validación de cambio de estado y colisiones en batchmode."
+                      "acceptance_criteria":  "Bloqueo fÃ­sico/energÃ©tico reactivo durante enfrentamientos en cÃ¡maras.",
+                      "verification":  "ValidaciÃ³n de cambio de estado y colisiones en batchmode."
                   },
                   {
                       "id":  "TASK-019",
@@ -257,20 +259,56 @@
                       "files":  [
                                     "Assets/Scripts/World/DungeonEncounterDirector.cs"
                                 ],
-                      "acceptance_criteria":  "Gestor de oleadas de combate por arena, disolución de barreras y generación de cofre.",
-                      "verification":  "Validación de ciclo de oleadas en Unity 6."
+                      "acceptance_criteria":  "Gestor de oleadas de combate por arena, disoluciÃ³n de barreras y generaciÃ³n de cofre.",
+                      "verification":  "ValidaciÃ³n de ciclo de oleadas en Unity 6."
                   },
                   {
                       "id":  "TASK-020",
                       "phase":  12,
-                      "title":  "Menú de Pausa, Opciones y Resumen de Estadísticas",
-                      "status":  "pending",
-                      "estimated_tokens":  "—",
+                      "title":  "MenÃº de Pausa, Opciones y Resumen de EstadÃ­sticas",
+                      "status":  "completed",
+                      "estimated_tokens":  "3.4k",
                       "files":  [
                                     "Assets/Scripts/UI/PauseMenuUI.cs"
                                 ],
-                      "acceptance_criteria":  "Pausa completa de escala temporal, guardado manual y visualización de progreso de run.",
-                      "verification":  "Test de atajo Escape y transición de estado en GameManager."
+                      "acceptance_criteria":  "Pausa completa de escala temporal, guardado manual y visualizaciÃ³n de progreso de run.",
+                      "verification":  "Test de atajo Escape y transiciÃ³n de estado en GameManager."
+                  },
+                  {
+                      "id":  "TASK-021",
+                      "phase":  12,
+                      "title":  "SÃ­ntesis de Audio Procedural 2D en Tiempo Real",
+                      "status":  "completed",
+                      "estimated_tokens":  "3.5k",
+                      "files":  [
+                                    "Assets/Scripts/Core/ProceduralAudio2D.cs"
+                                ],
+                      "acceptance_criteria":  "GeneraciÃ³n de ondas sinusoidales, impactos y ruido blanco para feedback de lore, dashes y golpes.",
+                      "verification":  "CompilaciÃ³n y reproducciÃ³n procedimental en Unity 6."
+                  },
+                  {
+                      "id":  "TASK-022",
+                      "phase":  13,
+                      "title":  "MÃ¡quina de Estados de Jefe y Patrones de Ataque 2D",
+                      "status":  "pending",
+                      "estimated_tokens":  "â€”",
+                      "files":  [
+                                    "Assets/Scripts/Entities/BossController2D.cs"
+                                ],
+                      "acceptance_criteria":  "Jefe con fases mÃºltiples de combate, telegrafiado de ataques y arena de combate.",
+                      "verification":  "Test de ciclo de fases y daÃ±o en batchmode."
+                  },
+                  {
+                      "id":  "TASK-023",
+                      "phase":  13,
+                      "title":  "Pintor Procedural de Tilemaps 2D por Bioma",
+                      "status":  "pending",
+                      "estimated_tokens":  "â€”",
+                      "files":  [
+                                    "Assets/Scripts/World/BiomeTilemapPainter.cs"
+                                ],
+                      "acceptance_criteria":  "GeneraciÃ³n procedural de terreno y obstÃ¡culos usando RuleTiles o Palettes 2D en chunks.",
+                      "verification":  "ValidaciÃ³n de renderizado y colisiones por coordenadas de chunk."
                   }
               ]
 }
