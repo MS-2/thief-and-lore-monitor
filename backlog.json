@@ -1,10 +1,10 @@
 ﻿{
     "project":  "Thief \u0026 Lore",
     "daily_token_quota_target":  "20%",
-    "current_phase":  10,
-    "agent_status":  "working",
-    "last_updated":  "2026-09-05T02:58:18",
-    "total_estimated_tokens":  "60.0k",
+    "current_phase":  11,
+    "agent_status":  "idle",
+    "last_updated":  "2026-09-05T02:59:57",
+    "total_estimated_tokens":  "67.1k",
     "recently_completed":  [
                                "TASK-001: Estructura base, repositorio GitHub y configuración inicial (~2.5k tokens)",
                                "TASK-002: Controlador 2D, Cámara suave y Gestor de Estados (~4.8k tokens)",
@@ -22,7 +22,9 @@
                                "TASK-014: Sistema de Reliquias Pasivas y Bonificadores de Exploración (~3.5k tokens)",
                                "TASK-015: Brújula y HUD de Navegación de Puntos de Interés (~3.3k tokens)",
                                "TASK-016: Habilidades Activas, Proyectiles Arcanos y Ondas de Pulso (~3.8k tokens)",
-                               "TASK-017: HUD de Recursos en Vivo (Salud, Maná/Energía y Cooldowns) (~3.1k tokens)"
+                               "TASK-017: HUD de Recursos en Vivo (Salud, Maná/Energía y Cooldowns) (~3.1k tokens)",
+                               "TASK-018: Barreras Arcanas Sellables y Puertas de Combate (~3.2k tokens)",
+                               "TASK-019: Director de Encuentros y Oleadas en Mazmorras con Cofre de Recompensa (~3.9k tokens)"
                            ],
     "tasks":  [
                   {
@@ -237,14 +239,38 @@
                   {
                       "id":  "TASK-018",
                       "phase":  11,
+                      "title":  "Barreras Arcanas Sellables y Puertas de Combate",
+                      "status":  "completed",
+                      "estimated_tokens":  "3.2k",
+                      "files":  [
+                                    "Assets/Scripts/World/ArcaneBarrier2D.cs"
+                                ],
+                      "acceptance_criteria":  "Bloqueo físico/energético reactivo durante enfrentamientos en cámaras.",
+                      "verification":  "Validación de cambio de estado y colisiones en batchmode."
+                  },
+                  {
+                      "id":  "TASK-019",
+                      "phase":  11,
                       "title":  "Director de Encuentros y Mazmorras Procedurales",
-                      "status":  "pending",
-                      "estimated_tokens":  "—",
+                      "status":  "completed",
+                      "estimated_tokens":  "3.9k",
                       "files":  [
                                     "Assets/Scripts/World/DungeonEncounterDirector.cs"
                                 ],
-                      "acceptance_criteria":  "Spawning adaptativo de oleadas y eventos de combate al entrar a cámaras de ruinas.",
-                      "verification":  "Test de spawning y limpieza de sala en Unity 6."
+                      "acceptance_criteria":  "Gestor de oleadas de combate por arena, disolución de barreras y generación de cofre.",
+                      "verification":  "Validación de ciclo de oleadas en Unity 6."
+                  },
+                  {
+                      "id":  "TASK-020",
+                      "phase":  12,
+                      "title":  "Menú de Pausa, Opciones y Resumen de Estadísticas",
+                      "status":  "pending",
+                      "estimated_tokens":  "—",
+                      "files":  [
+                                    "Assets/Scripts/UI/PauseMenuUI.cs"
+                                ],
+                      "acceptance_criteria":  "Pausa completa de escala temporal, guardado manual y visualización de progreso de run.",
+                      "verification":  "Test de atajo Escape y transición de estado en GameManager."
                   }
               ]
 }
