@@ -1,10 +1,10 @@
 ﻿{
     "project":  "Thief \u0026 Lore",
     "daily_token_quota_target":  "20%",
-    "current_phase":  8,
-    "agent_status":  "working",
-    "last_updated":  "2026-09-05T02:36:42",
-    "total_estimated_tokens":  "46.3k",
+    "current_phase":  9,
+    "agent_status":  "idle",
+    "last_updated":  "2026-09-05T02:38:30",
+    "total_estimated_tokens":  "53.1k",
     "recently_completed":  [
                                "TASK-001: Estructura base, repositorio GitHub y configuración inicial (~2.5k tokens)",
                                "TASK-002: Controlador 2D, Cámara suave y Gestor de Estados (~4.8k tokens)",
@@ -18,7 +18,9 @@
                                "TASK-010: Atmósfera Sonora y VFX de Iluminación 2D por Bioma (~3.3k tokens)",
                                "TASK-011: Sistema de Guardado y Persistencia en JSON (~3.5k tokens)",
                                "TASK-012: Cofres de Botín e Interacciones de Exploración 2D (~3.4k tokens)",
-                               "TASK-013: Sistema de Niebla de Guerra y Cartografía 2D (~3.2k tokens)"
+                               "TASK-013: Sistema de Niebla de Guerra y Cartografía 2D (~3.2k tokens)",
+                               "TASK-014: Sistema de Reliquias Pasivas y Bonificadores de Exploración (~3.5k tokens)",
+                               "TASK-015: Brújula y HUD de Navegación de Puntos de Interés (~3.3k tokens)"
                            ],
     "tasks":  [
                   {
@@ -185,13 +187,37 @@
                       "id":  "TASK-014",
                       "phase":  9,
                       "title":  "Sistema de Reliquias Pasivas y Bonificadores de Exploración",
-                      "status":  "pending",
-                      "estimated_tokens":  "—",
+                      "status":  "completed",
+                      "estimated_tokens":  "3.5k",
                       "files":  [
                                     "Assets/Scripts/Items/RelicSystem.cs"
                                 ],
-                      "acceptance_criteria":  "Equipamiento de reliquias arcanas/cibernéticas con efectos pasivos permanentes.",
-                      "verification":  "Compilación y test de cálculo de atributos en batchmode."
+                      "acceptance_criteria":  "Equipamiento de reliquias arcanas/cibernéticas con efectos pasivos acumulativos.",
+                      "verification":  "Compilación y cálculo de modificadores en Unity 6."
+                  },
+                  {
+                      "id":  "TASK-015",
+                      "phase":  9,
+                      "title":  "Brújula y HUD de Navegación de Puntos de Interés",
+                      "status":  "completed",
+                      "estimated_tokens":  "3.3k",
+                      "files":  [
+                                    "Assets/Scripts/UI/ExplorationCompassUI.cs"
+                                ],
+                      "acceptance_criteria":  "Seguimiento angular relativo a balizas activadas y puntos clave en pantalla.",
+                      "verification":  "Compilación en batchmode y verificación de coordenadas angulares."
+                  },
+                  {
+                      "id":  "TASK-016",
+                      "phase":  10,
+                      "title":  "Sistema de Habilidades Activas y Catalizadores Mágicos/Cibernéticos",
+                      "status":  "pending",
+                      "estimated_tokens":  "—",
+                      "files":  [
+                                    "Assets/Scripts/Entities/AbilitySystem2D.cs"
+                                ],
+                      "acceptance_criteria":  "Lanzamiento de proyectiles arcanos y pulsos electromagnéticos con cooldown y coste.",
+                      "verification":  "Validación en batchmode y spawning de proyectiles 2D."
                   }
               ]
 }
