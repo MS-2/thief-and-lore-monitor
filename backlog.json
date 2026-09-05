@@ -1,10 +1,10 @@
 ﻿{
     "project":  "Thief \u0026 Lore",
     "daily_token_quota_target":  "20%",
-    "current_phase":  6,
-    "agent_status":  "working",
-    "last_updated":  "2026-09-05T02:15:06",
-    "total_estimated_tokens":  "32.9k",
+    "current_phase":  7,
+    "agent_status":  "idle",
+    "last_updated":  "2026-09-05T02:16:53",
+    "total_estimated_tokens":  "39.7k",
     "recently_completed":  [
                                "TASK-001: Estructura base, repositorio GitHub y configuración inicial (~2.5k tokens)",
                                "TASK-002: Controlador 2D, Cámara suave y Gestor de Estados (~4.8k tokens)",
@@ -14,7 +14,9 @@
                                "TASK-006: Sistema de Combate e IA de Enemigos por Bioma (~4.6k tokens)",
                                "TASK-007: Generación de Build Automática StandaloneWindows64 (~3.2k tokens)",
                                "TASK-008: Códice de Lore e Interfaz de Inspección estilo FromSoftware (~3.6k tokens)",
-                               "TASK-009: Generador Procedural de Estructuras y Ruinas en Chunks (~3.1k tokens)"
+                               "TASK-009: Generador Procedural de Estructuras y Ruinas en Chunks (~3.1k tokens)",
+                               "TASK-010: Atmósfera Sonora y VFX de Iluminación 2D por Bioma (~3.3k tokens)",
+                               "TASK-011: Sistema de Guardado y Persistencia en JSON (~3.5k tokens)"
                            ],
     "tasks":  [
                   {
@@ -131,14 +133,39 @@
                   {
                       "id":  "TASK-010",
                       "phase":  7,
-                      "title":  "Atmósfera Sonora y VFX Ambiental por Bioma",
-                      "status":  "pending",
-                      "estimated_tokens":  "—",
+                      "title":  "Atmósfera Sonora y VFX de Iluminación 2D por Bioma",
+                      "status":  "completed",
+                      "estimated_tokens":  "3.3k",
                       "files":  [
                                     "Assets/Scripts/Core/BiomeAtmosphereController.cs"
                                 ],
-                      "acceptance_criteria":  "Transiciones de iluminación global y audio ambiental al cambiar de región.",
-                      "verification":  "Verificación de triggers y cambio de perfiles URP 2D."
+                      "acceptance_criteria":  "Transiciones de iluminación URP 2D y audio ambiental al cambiar de región.",
+                      "verification":  "Verificación limpia en batchmode."
+                  },
+                  {
+                      "id":  "TASK-011",
+                      "phase":  7,
+                      "title":  "Sistema de Guardado y Persistencia en JSON",
+                      "status":  "completed",
+                      "estimated_tokens":  "3.5k",
+                      "files":  [
+                                    "Assets/Scripts/Core/SaveManager.cs",
+                                    "Assets/Scripts/Core/SaveData.cs"
+                                ],
+                      "acceptance_criteria":  "Serialización de runs, balizas descubiertas y códice de items a disco.",
+                      "verification":  "Validación de ciclo de serialización en Unity 6."
+                  },
+                  {
+                      "id":  "TASK-012",
+                      "phase":  8,
+                      "title":  "Cofres de Botín e Interacciones de Exploración 2D",
+                      "status":  "pending",
+                      "estimated_tokens":  "—",
+                      "files":  [
+                                    "Assets/Scripts/World/LootChest2D.cs"
+                                ],
+                      "acceptance_criteria":  "Cofres arcanos interactuables con apertura y entrega de reliquias/lore.",
+                      "verification":  "Compilación y test de colisión de interacción."
                   }
               ]
 }
