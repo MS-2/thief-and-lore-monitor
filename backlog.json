@@ -1,10 +1,10 @@
 ﻿{
     "project":  "Thief \u0026 Lore",
     "daily_token_quota_target":  "20%",
-    "current_phase":  5,
-    "agent_status":  "working",
-    "last_updated":  "2026-09-05T02:02:27",
-    "total_estimated_tokens":  "26.2k",
+    "current_phase":  6,
+    "agent_status":  "idle",
+    "last_updated":  "2026-09-05T02:05:23",
+    "total_estimated_tokens":  "32.9k",
     "recently_completed":  [
                                "TASK-001: Estructura base, repositorio GitHub y configuración inicial (~2.5k tokens)",
                                "TASK-002: Controlador 2D, Cámara suave y Gestor de Estados (~4.8k tokens)",
@@ -12,7 +12,9 @@
                                "TASK-004: Arquitectura de Items y Lore con ScriptableObjects (~3.4k tokens)",
                                "TASK-005: Bucle Roguelike, Balizas y Persistencia (~3.8k tokens)",
                                "TASK-006: Sistema de Combate e IA de Enemigos por Bioma (~4.6k tokens)",
-                               "TASK-007: Generación de Build Automática StandaloneWindows64 (~3.2k tokens)"
+                               "TASK-007: Generación de Build Automática StandaloneWindows64 (~3.2k tokens)",
+                               "TASK-008: Códice de Lore e Interfaz de Inspección estilo FromSoftware (~3.6k tokens)",
+                               "TASK-009: Generador Procedural de Estructuras y Ruinas en Chunks (~3.1k tokens)"
                            ],
     "tasks":  [
                   {
@@ -105,26 +107,38 @@
                       "id":  "TASK-008",
                       "phase":  6,
                       "title":  "Códice de Lore e Interfaz de Inspección de Objetos",
-                      "status":  "pending",
-                      "estimated_tokens":  "—",
+                      "status":  "completed",
+                      "estimated_tokens":  "3.6k",
                       "files":  [
                                     "Assets/Scripts/UI/CodexUI.cs",
                                     "Assets/Scripts/UI/ItemInspectionPanel.cs"
                                 ],
-                      "acceptance_criteria":  "Panel con vista de lore primario y secundario críptico.",
+                      "acceptance_criteria":  "Panel con vista de lore primario y secundario críptico con alternancia rápida.",
                       "verification":  "Compilación en batchmode y verificación de eventos de UI."
                   },
                   {
                       "id":  "TASK-009",
                       "phase":  6,
                       "title":  "Generador Procedural de Estructuras y Ruinas en Chunks",
-                      "status":  "pending",
-                      "estimated_tokens":  "—",
+                      "status":  "completed",
+                      "estimated_tokens":  "3.1k",
                       "files":  [
                                     "Assets/Scripts/World/StructureGenerator.cs"
                                 ],
-                      "acceptance_criteria":  "Aparición de monolitos, cofres arcanos y terminales según el bioma del chunk.",
+                      "acceptance_criteria":  "Aparición determinista de monolitos, cofres arcanos y terminales según el bioma.",
                       "verification":  "Test de instanciación en coordenadas de chunk."
+                  },
+                  {
+                      "id":  "TASK-010",
+                      "phase":  7,
+                      "title":  "Atmósfera Sonora y VFX Ambiental por Bioma",
+                      "status":  "pending",
+                      "estimated_tokens":  "—",
+                      "files":  [
+                                    "Assets/Scripts/Core/BiomeAtmosphereController.cs"
+                                ],
+                      "acceptance_criteria":  "Transiciones de iluminación global y audio ambiental al cambiar de región.",
+                      "verification":  "Verificación de triggers y cambio de perfiles URP 2D."
                   }
               ]
 }
