@@ -1,10 +1,10 @@
 {
     "project":  "Thief \u0026 Lore",
     "daily_token_quota_target":  "25%",
-    "current_phase":  18,
+    "current_phase":  19,
     "agent_status":  "idle",
-    "last_updated":  "2026-09-05T12:10:32",
-    "total_estimated_tokens":  "108.3k",
+    "last_updated":  "2026-09-05T22:53:18",
+    "total_estimated_tokens":  "111.8k",
     "recently_completed":  [
                                "TASK-001: Estructura base y manifiesto de automatización (~3.5k tokens)",
                                "TASK-002: Controlador básico 2D y Cinemachine/URP Camera (~3.5k tokens)",
@@ -35,7 +35,8 @@
                                "TASK-027: Pantalla Inicial de Controles y Soporte Multi-dispositivo (~3.5k tokens)",
                                "TASK-028: Sistema de Efectos de Estado y Daño Elemental (~3.5k tokens)",
                                "TASK-029: Armas Secundarias y Alternancia de Estilos (~3.5k tokens)",
-                               "TASK-030: Trampas Ambientales y Peligros de Bioma (~3.5k tokens)"
+                               "TASK-030: Trampas Ambientales y Peligros de Bioma (~3.5k tokens)",
+                               "TASK-031: Comerciante Nómada y Economía de Ecos de Memoria (~3.5k tokens)"
                            ],
     "tasks":  [
                   {
@@ -409,8 +410,8 @@
                       "id":  "TASK-031",
                       "phase":  19,
                       "title":  "Comerciante Nómada y Economía de Ecos de Memoria",
-                      "status":  "pending",
-                      "estimated_tokens":  "—",
+                      "status":  "completed",
+                      "estimated_tokens":  "3.5k",
                       "files":  [
                                     "Assets/Scripts/World/MemoryEchoMerchant.cs"
                                 ],
