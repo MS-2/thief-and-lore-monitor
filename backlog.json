@@ -1,9 +1,9 @@
 {
   "project": "Thief & Lore",
   "daily_token_quota_target": "25%",
-  "current_phase": 22,
+  "current_phase": 24,
   "agent_status": "idle",
-  "last_updated": "2026-09-07T05:09:22",
+  "last_updated": "2026-09-08T05:05:53",
   "total_estimated_tokens": "115.3k",
   "recently_completed": [
     "TASK-001: Estructura base y manifiesto de automatización (~3.5k tokens)",
@@ -39,7 +39,9 @@
     "TASK-031: Comerciante Nómada y Economía de Ecos de Memoria (~3.5k tokens)",
     "TASK-032: Mazmorras Procedurales y Portales de Falla (~3.5k tokens)",
     "TASK-033: Minimapa Completo y Marcadores de Navegación (~3.5k tokens)",
-    "TASK-034: Sistema de Forja y Transmutación de Reliquias (~3.5k tokens)"
+    "TASK-034: Sistema de Forja y Transmutación de Reliquias (~3.5k tokens)",
+    "TASK-035: Eventos Climatológicos y Tempestades Arcanas (~3.5k tokens)",
+    "TASK-036: Jefe Final del Núcleo y Bucle de Ascensión Roguelike (~3.5k tokens)"
   ],
   "tasks": [
     {
@@ -461,25 +463,25 @@
       "id": "TASK-035",
       "phase": 23,
       "title": "Eventos Climatológicos y Tempestades Arcanas",
-      "status": "pending",
-      "estimated_tokens": "—",
+      "status": "completed",
+      "estimated_tokens": "3.5k",
       "files": [
         "Assets/Scripts/World/WeatherDirector2D.cs"
       ],
       "acceptance_criteria": "Tormentas de plasma y fluctuaciones de luz URP 2D que alteran visibilidad y enemigos.",
-      "verification": "Cambios climáticos dinámicos en mundos abiertos."
+      "verification": "Cambios climáticos dinámicos en mundos abiertos y modificaciones de IA validadas."
     },
     {
       "id": "TASK-036",
       "phase": 24,
       "title": "Jefe Final del Núcleo y Bucle de Ascensión Roguelike",
-      "status": "pending",
-      "estimated_tokens": "—",
+      "status": "completed",
+      "estimated_tokens": "3.5k",
       "files": [
         "Assets/Scripts/Entities/FinalCoreArbiter.cs"
       ],
       "acceptance_criteria": "Enfrentamiento climático en Fortaleza Celeste, epílogo y New Game+ con modificadores.",
-      "verification": "Condición de victoria, créditos y bucle de ascensión."
+      "verification": "Condición de victoria, créditos y bucle de ascensión validados."
     }
   ]
 }
