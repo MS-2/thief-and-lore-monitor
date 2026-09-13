@@ -3,7 +3,7 @@
     "daily_token_quota_target":  "25%",
     "current_phase":  25,
     "agent_status":  "idle",
-    "last_updated":  "2026-09-13T13:36:00",
+    "last_updated":  "2026-09-13T14:09:39",
     "total_estimated_tokens":  "115.3k",
     "recently_completed":  [
                                "TASK-001: Estructura base y manifiesto de automatización (~3.5k tokens)",
@@ -532,6 +532,83 @@
                                 ],
                       "acceptance_criteria":  "Persistencia de estadísticas históricas (jefes derrotados, daño total infligido, reliquias transmutadas) visible en el menú de pausa.",
                       "verification":  "Guardado y recarga de partida confirmando persistencia de estadísticas acumuladas."
+                  },
+                  {
+                      "id":  "TASK-041",
+                      "phase":  26,
+                      "title":  "Generador e Integrador de Tilesets Finales Pixel Art para Biomas",
+                      "status":  "pending",
+                      "estimated_tokens":  "3.5k",
+                      "files":  [
+                                    "Assets/Art/Biomes",
+                                    "Assets/Scripts/World/BiomeTilemapPainter.cs"
+                                ],
+                      "acceptance_criteria":  "Generación e integración de tilesets modulares en 16 PPU (suelo, muros, columnas, decoraciones) para los 5 biomas.",
+                      "verification":  "Validación visual de continuidad de tiles y carga de texturas sin artefactos de compresión."
+                  },
+                  {
+                      "id":  "TASK-042",
+                      "phase":  26,
+                      "title":  "Spritesheets de Personaje y Enemigos en 16 PPU",
+                      "status":  "pending",
+                      "estimated_tokens":  "3.5k",
+                      "files":  [
+                                    "Assets/Art/Sprites",
+                                    "Assets/Scripts/Core/SceneBootstrapper.cs"
+                                ],
+                      "acceptance_criteria":  "Producción de hojas de sprites divididas en frames simétricos para el héroe ladrón y arquetipos de enemigos.",
+                      "verification":  "Inspección de metadatos de importación sprite slicing en 16x16 / 24x24."
+                  },
+                  {
+                      "id":  "TASK-043",
+                      "phase":  27,
+                      "title":  "Componente SpriteSheetAnimator2D y Máquina de Estados de Animación",
+                      "status":  "pending",
+                      "estimated_tokens":  "3.5k",
+                      "files":  [
+                                    "Assets/Scripts/Entities/SpriteSheetAnimator2D.cs",
+                                    "Assets/Scripts/Entities/PlayerController2D.cs"
+                                ],
+                      "acceptance_criteria":  "Motor de animación por frames 2D para controlar ciclos de Idle, Walk, Dash y Attack sin dependencias de Mecanim pesado.",
+                      "verification":  "Transición fluida entre frames según velocidad y dirección del Rigidbody2D."
+                  },
+                  {
+                      "id":  "TASK-044",
+                      "phase":  27,
+                      "title":  "Animaciones de Combate, Telegrafiado de Ataques y Reacción a Golpes",
+                      "status":  "pending",
+                      "estimated_tokens":  "3.5k",
+                      "files":  [
+                                    "Assets/Scripts/Entities/EnemyAI2D.cs",
+                                    "Assets/Scripts/Entities/HealthSystem.cs"
+                                ],
+                      "acceptance_criteria":  "Animaciones dedicadas de telegrafiado antes de golpear y deformación/knockback en recepción de daño.",
+                      "verification":  "Sincronización de hitbox y frames de impacto visual en combates contra enemigos."
+                  },
+                  {
+                      "id":  "TASK-045",
+                      "phase":  28,
+                      "title":  "AudioMixer Estratificado y Disparador de Pasos Dinámicos por Superficie",
+                      "status":  "pending",
+                      "estimated_tokens":  "3.5k",
+                      "files":  [
+                                    "Assets/Scripts/Core/ProceduralAudio2D.cs"
+                                ],
+                      "acceptance_criteria":  "Control de volumen por buses (Master, SFX, Ambiente), pasos modulados por bioma (piedra, metal, ceniza) y eco espacial.",
+                      "verification":  "Audio en tiempo real verificando cadencia de pasos al moverse y mezcla limpia de canales."
+                  },
+                  {
+                      "id":  "TASK-046",
+                      "phase":  28,
+                      "title":  "Efectos de Sonido Polifónicos de Combate y Feedback de Impacto",
+                      "status":  "pending",
+                      "estimated_tokens":  "3.5k",
+                      "files":  [
+                                    "Assets/Scripts/Items/WeaponSystem2D.cs",
+                                    "Assets/Scripts/Entities/EnemyAI2D.cs"
+                                ],
+                      "acceptance_criteria":  "Diseño sónico distintivo para cada arma (tajos de dagas, pesadez de mandoble, zumbido de plasma) y golpes críticos.",
+                      "verification":  "Prueba de colisión y ataque verificando disparos de clips de audio y variación de tono anti-fatiga."
                   }
               ]
 }
