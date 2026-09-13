@@ -1,9 +1,9 @@
 {
     "project":  "Thief \u0026 Lore",
     "daily_token_quota_target":  "25%",
-    "current_phase":  24,
+    "current_phase":  25,
     "agent_status":  "idle",
-    "last_updated":  "2026-09-13T13:30:22",
+    "last_updated":  "2026-09-13T13:36:00",
     "total_estimated_tokens":  "115.3k",
     "recently_completed":  [
                                "TASK-001: Estructura base y manifiesto de automatización (~3.5k tokens)",
@@ -482,6 +482,56 @@
                                 ],
                       "acceptance_criteria":  "Enfrentamiento climático en Fortaleza Celeste, epílogo y New Game+ con modificadores.",
                       "verification":  "Condición de victoria, créditos y bucle de ascensión validados."
+                  },
+                  {
+                      "id":  "TASK-037",
+                      "phase":  25,
+                      "title":  "Paisaje Sonoro Dinámico y Acústica Espacial de Biomas",
+                      "status":  "pending",
+                      "estimated_tokens":  "3.5k",
+                      "files":  [
+                                    "Assets/Scripts/Core/ProceduralAudio2D.cs"
+                                ],
+                      "acceptance_criteria":  "Generación de drones tonales por bioma, atenuación según distancia al núcleo y feedback sónico al purificar balizas.",
+                      "verification":  "Validación auditiva en tiempo real y transiciones suaves de volumen en cambio de bioma."
+                  },
+                  {
+                      "id":  "TASK-038",
+                      "phase":  25,
+                      "title":  "Diálogos Contextuales y Revelación de Lore con el Nómada",
+                      "status":  "pending",
+                      "estimated_tokens":  "3.5k",
+                      "files":  [
+                                    "Assets/Scripts/World/MemoryEchoMerchant.cs"
+                                ],
+                      "acceptance_criteria":  "Árbol de diálogo que reacciona a los fragmentos de memoria desbloqueados por el jugador en su inventario.",
+                      "verification":  "Interacción con NPC verificando actualización de líneas según ítems recolectados."
+                  },
+                  {
+                      "id":  "TASK-039",
+                      "phase":  25,
+                      "title":  "Animaciones Procedurales de Impacto y Destellos de Combate",
+                      "status":  "pending",
+                      "estimated_tokens":  "3.5k",
+                      "files":  [
+                                    "Assets/Scripts/Core/ProceduralVFX2D.cs",
+                                    "Assets/Scripts/Items/WeaponSystem2D.cs"
+                                ],
+                      "acceptance_criteria":  "Squash and stretch en sprites de ataque, chispas arcanas dinámicas en impactos críticos y retroceso visual.",
+                      "verification":  "Comprobación visual de animaciones en golpes y cadencia de armas secundarias."
+                  },
+                  {
+                      "id":  "TASK-040",
+                      "phase":  25,
+                      "title":  "Historial de Expediciones y Registro de Logros en UI",
+                      "status":  "pending",
+                      "estimated_tokens":  "3.5k",
+                      "files":  [
+                                    "Assets/Scripts/Core/SaveData.cs",
+                                    "Assets/Scripts/UI/PauseMenuUI.cs"
+                                ],
+                      "acceptance_criteria":  "Persistencia de estadísticas históricas (jefes derrotados, daño total infligido, reliquias transmutadas) visible en el menú de pausa.",
+                      "verification":  "Guardado y recarga de partida confirmando persistencia de estadísticas acumuladas."
                   }
               ]
 }
