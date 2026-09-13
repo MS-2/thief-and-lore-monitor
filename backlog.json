@@ -3,7 +3,7 @@
     "daily_token_quota_target":  "25%",
     "current_phase":  25,
     "agent_status":  "idle",
-    "last_updated":  "2026-09-13T14:09:39",
+    "last_updated":  "2026-09-13T14:14:26",
     "total_estimated_tokens":  "115.3k",
     "recently_completed":  [
                                "TASK-001: Estructura base y manifiesto de automatización (~3.5k tokens)",
@@ -41,7 +41,8 @@
                                "TASK-033: Minimapa Completo y Marcadores de Navegación (~3.5k tokens)",
                                "TASK-034: Sistema de Forja y Transmutación de Reliquias (~3.5k tokens)",
                                "TASK-035: Eventos Climatológicos y Tempestades Arcanas (~3.5k tokens)",
-                               "TASK-036: Jefe Final del Núcleo y Bucle de Ascensión Roguelike (~3.5k tokens)"
+                               "TASK-036: Jefe Final del Núcleo y Bucle de Ascensión Roguelike (~3.5k tokens)",
+                               "TASK-037: Paisaje Sonoro Dinámico y Acústica Espacial de Biomas (~3.5k tokens)"
                            ],
     "tasks":  [
                   {
@@ -487,7 +488,7 @@
                       "id":  "TASK-037",
                       "phase":  25,
                       "title":  "Paisaje Sonoro Dinámico y Acústica Espacial de Biomas",
-                      "status":  "pending",
+                      "status":  "completed",
                       "estimated_tokens":  "3.5k",
                       "files":  [
                                     "Assets/Scripts/Core/ProceduralAudio2D.cs"
@@ -609,6 +610,54 @@
                                 ],
                       "acceptance_criteria":  "Diseño sónico distintivo para cada arma (tajos de dagas, pesadez de mandoble, zumbido de plasma) y golpes críticos.",
                       "verification":  "Prueba de colisión y ataque verificando disparos de clips de audio y variación de tono anti-fatiga."
+                  },
+                  {
+                      "id":  "TASK-047",
+                      "phase":  29,
+                      "title":  "Sistema de Tooltips Flotantes Contextuales y Comparador de Ítems",
+                      "status":  "pending",
+                      "estimated_tokens":  "3.5k",
+                      "files":  [
+                                    "Assets/Scripts/UI/ItemTooltipUI.cs"
+                                ],
+                      "acceptance_criteria":  "Ventana flotante al situar cursor o foco sobre armas y reliquias con comparación visual de estadísticas (verde/rojo).",
+                      "verification":  "Prueba de hover en Códice y Tienda mostrando atributos comparados."
+                  },
+                  {
+                      "id":  "TASK-048",
+                      "phase":  29,
+                      "title":  "Menú de Ajustes Avanzados (Audio, Gráficos y Controles)",
+                      "status":  "pending",
+                      "estimated_tokens":  "3.5k",
+                      "files":  [
+                                    "Assets/Scripts/UI/SettingsMenuUI.cs"
+                                ],
+                      "acceptance_criteria":  "Submenú accesible desde pausa con sliders de volumen (Master, SFX, Música), modo ventana/fullscreen y calibración de sensibilidad.",
+                      "verification":  "Modificación de sliders reflejada de inmediato en audio y resolución de pantalla."
+                  },
+                  {
+                      "id":  "TASK-049",
+                      "phase":  29,
+                      "title":  "Indicadores Fuera de Pantalla para Balizas y Amenazas",
+                      "status":  "pending",
+                      "estimated_tokens":  "3.5k",
+                      "files":  [
+                                    "Assets/Scripts/UI/OffscreenIndicator2D.cs"
+                                ],
+                      "acceptance_criteria":  "Flechas y glifos proyectados en los bordes de la pantalla apuntando hacia balizas activas o proyectiles enemigos entrantes.",
+                      "verification":  "Seguimiento visual en pantalla al alejarse de puntos de interés."
+                  },
+                  {
+                      "id":  "TASK-050",
+                      "phase":  29,
+                      "title":  "Sistema de Notificaciones Flotantes y Toasts de Progresión",
+                      "status":  "pending",
+                      "estimated_tokens":  "3.5k",
+                      "files":  [
+                                    "Assets/Scripts/UI/NotificationToastUI.cs"
+                                ],
+                      "acceptance_criteria":  "Toasts animados no intrusivos que anuncian recolección de ecos (+25 ✦), nuevo vestigio en códice y cambio de ciclo roguelike.",
+                      "verification":  "Disparo de eventos y comprobación de cola de toasts con auto-desvanecimiento."
                   }
               ]
 }
