@@ -1,11 +1,12 @@
 {
     "project": "Thief & Lore",
     "daily_token_quota_target": "30%",
-    "current_phase": 36,
-    "agent_status": "Fase 36 completada: Corrección de regeneración de vida en balizas y HUD dinámico multi-jefe con nombres y HP",
-    "last_updated": "2026-09-15T05:16:39",
-    "total_estimated_tokens": "132.8k",
+    "current_phase": 37,
+    "agent_status": "Fase 37 completada: Selector de modo ventana/pantalla completa, resoluciones y escala adaptativa de UI para pantallas de baja resolución",
+    "last_updated": "2026-09-15T11:42:00",
+    "total_estimated_tokens": "136.3k",
     "recently_completed": [
+        "TASK-067: Selector de modo de pantalla, resoluciones y escala adaptativa de UI (~3.5k tokens)",
         "TASK-066: Corrección de salud en balizas y HUD de jefes (~3.5k tokens)",
         "TASK-001: Estructura base y manifiesto de automatización (~3.5k tokens)",
         "TASK-002: Controlador básico 2D y Cinemachine/URP Camera (~3.5k tokens)",
@@ -920,6 +921,21 @@
             ],
             "acceptance_criteria": "Permitir restaurar salud completa al morir/respawnear o al entrar en contacto con balizas sin bloqueo de IsDead; vincular BossHealthBarHUD dinámicamente a FinalCoreArbiter y BossController2D con nombres y textos de HP.",
             "verification": "Verificación de compilación limpia en StandaloneWindows64 y 0 errores en Player.log tras prueba de 8s."
+        },
+        {
+            "id": "TASK-067",
+            "phase": 37,
+            "title": "Selector de Modo de Pantalla (Ventana/Completa), Resoluciones y Escala de UI Adaptativa",
+            "status": "completed",
+            "estimated_tokens": "3.5k",
+            "files": [
+                "Assets/Scripts/UI/SettingsMenuUI.cs",
+                "Assets/Scripts/Core/SceneBootstrapper.cs",
+                "Assets/Scripts/UI/MainMenuUI.cs",
+                "Assets/Scripts/UI/PauseMenuUI.cs"
+            ],
+            "acceptance_criteria": "Integrar botones reactivos para Pantalla Completa y Modo Ventana en SettingsMenuUI, ciclo de resoluciones soportadas (1080p, 900p, 768p, 720p), selector de escala de UI con CanvasScaler dinámico y atajo global Alt+Enter.",
+            "verification": "Compilación limpia en StandaloneWindows64 y 0 errores o excepciones en Player.log tras prueba de ejecución."
         }
     ]
 }
