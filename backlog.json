@@ -59,7 +59,8 @@
                                "TASK-049: Indicadores Fuera de Pantalla para Balizas y Amenazas (~3.5k tokens)",
                                "TASK-050: Sistema de Notificaciones Flotantes y Toasts de Progresión (~3.5k tokens)",
                                "TASK-053: Barreras Geográficas, Obstáculos Ambientales y Backtracking (Ability Gating) (~3.5k tokens)",
-                               "TASK-056: Pantalla de Título Inicial, Continuación de Partida y Persistencia Integral (~3.5k tokens)"
+                               "TASK-056: Pantalla de Título Inicial, Continuación de Partida y Persistencia Integral (~3.5k tokens)",
+                               "TASK-057: Sistema Extendido de Arsenal, Sprites de Armas y Animaciones de Ataque / Guardia (~3.5k tokens)"
                            ],
     "tasks":  [
                   {
@@ -758,6 +759,22 @@
                                 ],
                       "acceptance_criteria":  "Pantalla de inicio al arrancar con Continuar Partida (habilitada solo con guardado previo) y Nueva Incursión, capturando coordenadas, vida y ecos al guardar y restaurándolos al continuar.",
                       "verification":  "Comprobación de guardado en baliza/pausa y reinicio del ejecutable verificando botón Continuar activo y restauración exacta de posición y ecos."
+                  },
+                  {
+                      "id":  "TASK-057",
+                      "phase":  32,
+                      "title":  "Sistema Extendido de Arsenal, Sprites de Armas y Animaciones de Ataque / Guardia",
+                      "status":  "completed",
+                      "estimated_tokens":  "3.5k",
+                      "files":  [
+                                    "Assets/Scripts/Entities/PlayerWeaponVisual2D.cs",
+                                    "Assets/Scripts/Items/WeaponSystem2D.cs",
+                                    "Assets/Scripts/Entities/HealthSystem.cs",
+                                    "Assets/Scripts/Entities/AbilitySystem2D.cs",
+                                    "Assets/Scripts/Core/ProceduralAudio2D.cs"
+                                ],
+                      "acceptance_criteria":  "7 tipos de armas (Dagas, Espada, Hacha, Mandoble, Magia, Escudo, Plasma) con sprites pixel art, pivote dinámico de apuntado, animaciones cinemáticas de ataque, mitigación de daño al bloquear con escudo y diseño sonoro procedural.",
+                      "verification":  "Conmutación de armas (1-7 / Q / Scroll) confirmando actualización visual en manos del personaje, animaciones de ataque diferenciadas y bloqueo defensivo activo."
                   }
               ]
 }
