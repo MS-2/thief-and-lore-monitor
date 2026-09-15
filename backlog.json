@@ -1,10 +1,10 @@
 {
     "project":  "Thief \u0026 Lore",
     "daily_token_quota_target":  "25%",
-    "current_phase":  31,
+    "current_phase":  32,
     "agent_status":  "idle",
-    "last_updated":  "2026-09-14T21:31:22",
-    "total_estimated_tokens":  "125.8k",
+    "last_updated":  "2026-09-14T21:35:45",
+    "total_estimated_tokens":  "132.8k",
     "recently_completed":  [
                                "TASK-001: Estructura base y manifiesto de automatización (~3.5k tokens)",
                                "TASK-002: Controlador básico 2D y Cinemachine/URP Camera (~3.5k tokens)",
@@ -57,7 +57,8 @@
                                "TASK-047: Sistema de Tooltips Flotantes Contextuales y Comparador de Ítems (~3.5k tokens)",
                                "TASK-048: Menú de Ajustes Avanzados (Audio, Gráficos y Controles) (~3.5k tokens)",
                                "TASK-049: Indicadores Fuera de Pantalla para Balizas y Amenazas (~3.5k tokens)",
-                               "TASK-050: Sistema de Notificaciones Flotantes y Toasts de Progresión (~3.5k tokens)"
+                               "TASK-050: Sistema de Notificaciones Flotantes y Toasts de Progresión (~3.5k tokens)",
+                               "TASK-053: Barreras Geográficas, Obstáculos Ambientales y Backtracking (Ability Gating) (~3.5k tokens)"
                            ],
     "tasks":  [
                   {
@@ -705,7 +706,7 @@
                       "id":  "TASK-053",
                       "phase":  31,
                       "title":  "Barreras Geográficas, Obstáculos Ambientales y Backtracking (Ability Gating)",
-                      "status":  "pending",
+                      "status":  "completed",
                       "estimated_tokens":  "3.5k",
                       "files":  [
                                     "Assets/Scripts/World/GeographicBarrier2D.cs",
@@ -714,6 +715,33 @@
                                 ],
                       "acceptance_criteria":  "Barreras físicas y sellos elementales destruibles con armas específicas (mandoble cinético, rifle de plasma) que abren atajos hacia el santuario.",
                       "verification":  "Interacción de armas secundarias contra barreras y confirmación de desbloqueo permanente de accesos."
+                  },
+                  {
+                      "id":  "TASK-054",
+                      "phase":  32,
+                      "title":  "Secuencia de Victoria, Cinemática de Victoria y Resumen de Run de Ascensión",
+                      "status":  "pending",
+                      "estimated_tokens":  "3.5k",
+                      "files":  [
+                                    "Assets/Scripts/Core/RoguelikeLoopManager.cs",
+                                    "Assets/Scripts/UI/VictoryScreenUI.cs",
+                                    "Assets/Scripts/Entities/FinalCoreArbiter.cs"
+                                ],
+                      "acceptance_criteria":  "Al derrotar al Árbitro Final del Núcleo, transicionar a pantalla de victoria con recuento de estadísticas, tiempo de expedición y desbloqueo del siguiente nivel de Ascensión.",
+                      "verification":  "Trigger de derrota del boss final mostrando UI modal de victoria y actualización de datos de persistencia."
+                  },
+                  {
+                      "id":  "TASK-055",
+                      "phase":  32,
+                      "title":  "Sistema de Accesibilidad, Remapeo de Controles e Iconografía Dinámica",
+                      "status":  "pending",
+                      "estimated_tokens":  "3.5k",
+                      "files":  [
+                                    "Assets/Scripts/UI/SettingsMenuUI.cs",
+                                    "Assets/Scripts/Core/InputGlyphManager.cs"
+                                ],
+                      "acceptance_criteria":  "Detección dinámica de entrada (teclado/mando) con glifos de botones adaptativos y opciones de alto contraste para visibilidad.",
+                      "verification":  "Conmutación en caliente entre periféricos y verificación de glifos actualizados en HUD."
                   }
               ]
 }
