@@ -1,11 +1,12 @@
 {
     "project": "Thief & Lore",
     "daily_token_quota_target": "30%",
-    "current_phase": 42,
-    "agent_status": "Fase 42 completada: Generación e integración en runtime de sprites PixelLab para Mercader Nómada, Cofre Arcano de Botín y Reliquia Astrolabio Astral, con compilación y despliegue a Itch.io",
-    "last_updated": "2026-09-16T14:35:00",
-    "total_estimated_tokens": "153.8k",
+    "current_phase": 43,
+    "agent_status": "Fase 43 completada: Sistema de Talentos Arcanos, Árbol de Habilidades (tecla N), metaprogresión persistente en SaveData, compilación y despliegue en Itch.io",
+    "last_updated": "2026-09-16T15:42:00",
+    "total_estimated_tokens": "157.3k",
     "recently_completed": [
+        "TASK-073: Sistema de Talentos Arcanos y Metaprogresión Persistente del Ladrón de Lore (~3.5k tokens)",
         "TASK-072: Generación e Integración de Arte PixelLab: Mercader Nómada, Cofre de Botín Arcano y Reliquia Astrolabio (~3.5k tokens)",
         "TASK-071: Diagnóstico y Pulido Visual Ingame de HUD, Modales, Aggro de Jefes y Registro de Logros (~3.5k tokens)",
         "TASK-070: Vinculación en Runtime de Sprites PixelLab y Tileset Solaria Capital (~3.5k tokens)",
@@ -1009,6 +1010,24 @@
                 "Assets/Scripts/Items/ItemData.cs"
             ],
             "acceptance_criteria": "Generación con MCP PixelLab de sprites para el mercader nómada con linterna arcana, cofre de botín con herrajes dorados/runas e icono de astrolabio celestial para reliquias; vinculación en tiempo de ejecución sustituyendo marcadores procedurales con fallback seguro.",
+            "verification": "Compilación limpia en StandaloneWindows64 y 0 errores o excepciones en Player.log tras prueba de ejecución de 8s; despliegue exitoso con Butler a canal Windows en Itch.io."
+        },
+        {
+            "id": "TASK-073",
+            "phase": 43,
+            "title": "Sistema de Talentos Arcanos y Metaprogresión Persistente del Ladrón de Lore",
+            "status": "completed",
+            "estimated_tokens": "3.5k",
+            "files": [
+                "Assets/Scripts/Progression/TalentTreeManager.cs",
+                "Assets/Scripts/UI/TalentTreeUI.cs",
+                "Assets/Scripts/Entities/PlayerController2D.cs",
+                "Assets/Scripts/Entities/AbilitySystem2D.cs",
+                "Assets/Scripts/World/CombatLootDrop2D.cs",
+                "Assets/Scripts/Core/SaveData.cs",
+                "Assets/Scripts/Core/SceneBootstrapper.cs"
+            ],
+            "acceptance_criteria": "Implementación del Altar de Memorias con 6 talentos distribuidos en 3 ramas (Sombra, Combate, Resiliencia), costos en Ecos de Memoria, interfaz modal interactiva accesible con tecla N, efectos de ondas de choque radiales, regeneración en balizas y persistencia entre runs.",
             "verification": "Compilación limpia en StandaloneWindows64 y 0 errores o excepciones en Player.log tras prueba de ejecución de 8s; despliegue exitoso con Butler a canal Windows en Itch.io."
         }
     ]
