@@ -1,11 +1,12 @@
 {
     "project": "Thief & Lore",
     "daily_token_quota_target": "30%",
-    "current_phase": 39,
-    "agent_status": "Fase 39 completada: Integración de sprites PixelLab (Héroe Ladrón, Campeón Aethelred, Hechicero Arcano) y Tileset Wang Rotten Wastes",
-    "last_updated": "2026-09-15T16:02:00",
-    "total_estimated_tokens": "143.3k",
+    "current_phase": 40,
+    "agent_status": "Fase 40 completada: Vinculación en runtime de sprites PixelLab y Tileset Wang Solaria Capital / CelestialBastion",
+    "last_updated": "2026-09-16T09:07:00",
+    "total_estimated_tokens": "146.8k",
     "recently_completed": [
+        "TASK-070: Vinculación en Runtime de Sprites PixelLab y Tileset Solaria Capital (~3.5k tokens)",
         "TASK-069: Generación e Integración de Arte PixelLab (Sprites y Tileset Wang) (~3.5k tokens)",
         "TASK-068: Sistema de Object Pooling Universal (Zero GC Spikes) (~3.5k tokens)",
         "TASK-067: Selector de modo de pantalla, resoluciones y escala adaptativa de UI (~3.5k tokens)",
@@ -971,6 +972,24 @@
                 "Assets/Art/Biomes/rotten_wastes_wang_tileset.png"
             ],
             "acceptance_criteria": "Conexión con MCP PixelLab, generación y descarga de sprites direccionales para protagonista, dos arquetipos de jefes/enemigos y tileset de transición Wang para el bioma Rotten Wastes con paleta de fantasía oscura y contornos definidos.",
+            "verification": "Compilación limpia en StandaloneWindows64 y 0 errores o excepciones en Player.log tras prueba de ejecución de 8s."
+        },
+        {
+            "id": "TASK-070",
+            "phase": 40,
+            "title": "Vinculación en Runtime de Sprites PixelLab y Generación de Tileset Solaria Capital / Gran Árbol Sagrado",
+            "status": "completed",
+            "estimated_tokens": "3.5k",
+            "files": [
+                "Assets/Scripts/Core/SceneBootstrapper.cs",
+                "Assets/Scripts/Entities/BossController2D.cs",
+                "Assets/Scripts/Entities/RangedDroneEnemy2D.cs",
+                "Assets/Scripts/Entities/ShieldedEliteEnemy2D.cs",
+                "Assets/Art/Biomes/solaria_capital_wang_tileset.png",
+                "Assets/Art/Biomes/AshenWastes/",
+                "Assets/Art/Biomes/CelestialBastion/"
+            ],
+            "acceptance_criteria": "Conexión dinámica en tiempo de ejecución de los sprites PixelLab para protagonista (Thief of Lore), jefe primordial (Aethelred Champion), y drones/hechiceros; generación de tileset Wang para la capital imperial Solaria/CelestialBastion y segmentación de baldosas de suelo, muros y pilares.",
             "verification": "Compilación limpia en StandaloneWindows64 y 0 errores o excepciones en Player.log tras prueba de ejecución de 8s."
         }
     ]
