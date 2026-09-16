@@ -1,11 +1,12 @@
 {
     "project": "Thief & Lore",
     "daily_token_quota_target": "30%",
-    "current_phase": 40,
-    "agent_status": "Fase 40 completada: Vinculación en runtime de sprites PixelLab y Tileset Wang Solaria Capital / CelestialBastion",
-    "last_updated": "2026-09-16T09:07:00",
-    "total_estimated_tokens": "146.8k",
+    "current_phase": 41,
+    "agent_status": "Fase 41 completada: Diagnóstico mediante capturas ingame nativas, ocultación contextual de HUD/toasts, corrección de ScrollRect en logros y radio de aggro en jefes",
+    "last_updated": "2026-09-16T11:45:00",
+    "total_estimated_tokens": "150.3k",
     "recently_completed": [
+        "TASK-071: Diagnóstico y Pulido Visual Ingame de HUD, Modales, Aggro de Jefes y Registro de Logros (~3.5k tokens)",
         "TASK-070: Vinculación en Runtime de Sprites PixelLab y Tileset Solaria Capital (~3.5k tokens)",
         "TASK-069: Generación e Integración de Arte PixelLab (Sprites y Tileset Wang) (~3.5k tokens)",
         "TASK-068: Sistema de Object Pooling Universal (Zero GC Spikes) (~3.5k tokens)",
