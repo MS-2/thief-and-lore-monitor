@@ -1,0 +1,130 @@
+﻿{
+  "project": "Thief & Lore",
+  "name": "Fixed Bugs Backlog",
+  "last_updated": "2026-09-16T11:58:00",
+  "total_fixed": 8,
+  "bugs": [
+    {
+      "id": "BUG-001",
+      "title": "Salud del jugador no sanaba al maximo en baliza",
+      "category": "Gameplay / Core",
+      "detected_in": "Reporte de usuario en sesion de exploracion",
+      "symptom": "La salud quedaba en 0 o no regeneraba al 100% al interactuar con una baliza purificada.",
+      "root_cause": "Beacon.cs aplicaba regeneracion parcial sin forzar Heal(maxHealth) ni sincronizar HealthSystem con SaveData.",
+      "fix_applied": "Invocacion directa de HealthSystem.Heal(maxHealth) y actualizacion inmediata del HUD en Beacon.RestAtBeacon().",
+      "files_modified": [
+        "Assets/Scripts/World/Beacon.cs",
+        "Assets/Scripts/Entities/HealthSystem.cs"
+      ],
+      "resolved_date": "2026-09-15T18:00:00",
+      "status": "RESOLVED"
+    },
+    {
+      "id": "BUG-002",
+      "title": "Barra de salud del jefe primordial no reflejaba dano recibido",
+      "category": "UI / HUD",
+      "detected_in": "Reporte de usuario en combate con jefe",
+      "symptom": "La barra inferior de jefe no disminuia al impactar al Arbitro Supremo.",
+      "root_cause": "BossHealthBarHUD no suscribia adecuadamente el evento OnHealthChanged de FinalCoreArbiter.",
+      "fix_applied": "Suscripcion bidireccional y actualizacion de fillAmount en BossHealthBarHUD para instancias de FinalCoreArbiter.",
+      "files_modified": [
+        "Assets/Scripts/UI/BossHealthBarHUD.cs",
+        "Assets/Scripts/Entities/FinalCoreArbiter.cs"
+      ],
+      "resolved_date": "2026-09-15T18:00:00",
+      "status": "RESOLVED"
+    },
+    {
+      "id": "BUG-003",
+      "title": "Falta de selector de modo ventana/pantalla completa y dificultad de lectura en bajas resoluciones",
+      "category": "UI / Settings",
+      "detected_in": "Auditoria de menu de opciones",
+      "symptom": "El jugador no podia alternar entre pantalla completa y modo ventana ni escalar la interfaz para legibilidad.",
+      "root_cause": "SettingsMenuUI carecia de alternador Screen.SetResolution(fullScreen) y selector de uiScale.",
+      "fix_applied": "Implementacion de selector interactivo de resolucion, botones Pantalla Completa / Ventana y escalador CanvasScaler adaptativo.",
+      "files_modified": [
+        "Assets/Scripts/UI/SettingsMenuUI.cs"
+      ],
+      "resolved_date": "2026-09-15T19:00:00",
+      "status": "RESOLVED"
+    },
+    {
+      "id": "BUG-004",
+      "title": "Elementos del HUD in-game visibles en Menu Principal y Menus Modales",
+      "category": "UI / HUD",
+      "detected_in": "docs/screenshots/ui_audits/phase41/01_main_menu.png",
+      "symptom": "PlayerStatusHUD, OffscreenIndicator2D y ExpeditionTrackerHUD se renderizaban sobre el menu principal y menus de opciones.",
+      "root_cause": "Los controladores de HUD no evaluaban GameManager.CurrentState ni se suscribian a OnGameStateChanged.",
+      "fix_applied": "Ocultacion contextual automatica de contenedores de HUD cuando CanPlayerAct() es false o el estado es MainMenu/Paused.",
+      "files_modified": [
+        "Assets/Scripts/UI/PlayerStatusHUD.cs",
+        "Assets/Scripts/UI/OffscreenIndicator2D.cs",
+        "Assets/Scripts/UI/ExpeditionTrackerHUD.cs",
+        "Assets/Scripts/UI/MainMenuUI.cs"
+      ],
+      "resolved_date": "2026-09-16T11:30:00",
+      "status": "RESOLVED"
+    },
+    {
+      "id": "BUG-005",
+      "title": "Pantalla completa de controles superpuesta permanentemente sobre gameplay",
+      "category": "UI / Onboarding",
+      "detected_in": "docs/screenshots/ui_audits/phase41/02_gameplay_world.png",
+      "symptom": "Al ingresar a la expedicion desde el menu principal, la guia de controles tapaba la pantalla del juego.",
+      "root_cause": "ControlsScreenUI tenia showOnStart = true por defecto y no se descartaba al iniciar partida.",
+      "fix_applied": "showOnStart configurado a false y llamada a Dismiss() integrada al cerrar el menu principal.",
+      "files_modified": [
+        "Assets/Scripts/UI/ControlsScreenUI.cs",
+        "Assets/Scripts/UI/MainMenuUI.cs"
+      ],
+      "resolved_date": "2026-09-16T11:30:00",
+      "status": "RESOLVED"
+    },
+    {
+      "id": "BUG-006",
+      "title": "Barra de jefe activa desde el spawn y persecucion infinita sin aggro",
+      "category": "Gameplay / AI / Boss",
+      "detected_in": "docs/screenshots/ui_audits/phase41/01_main_menu.png",
+      "symptom": "La barra de Aegyr (500 HP) aparecia desde el primer segundo en pantalla sin que el jugador entrara en combate.",
+      "root_cause": "BossController2D no tenia radio de deteccion (perseguia siempre) y BossHealthBarHUD tenia radio de 30m siendo la distancia inicial de 26m.",
+      "fix_applied": "Adicion de radio de aggro de 14m en BossController2D, reduccion de radio de vinculacion a 16m y comprobacion de IsEngaged antes de mostrar HUD.",
+      "files_modified": [
+        "Assets/Scripts/Entities/BossController2D.cs",
+        "Assets/Scripts/Entities/FinalCoreArbiter.cs",
+        "Assets/Scripts/UI/BossHealthBarHUD.cs"
+      ],
+      "resolved_date": "2026-09-16T11:30:00",
+      "status": "RESOLVED"
+    },
+    {
+      "id": "BUG-007",
+      "title": "Tarjetas de logros recortadas y desalineadas hacia el fondo del ScrollRect",
+      "category": "UI / Achievements",
+      "detected_in": "docs/screenshots/ui_audits/phase41/04_achievements_bounties.png",
+      "symptom": "En la ventana de logros solo se apreciaban las dos ultimas tarjetas en la parte inferior, quedando el resto oculto fuera de vista.",
+      "root_cause": "Las tarjetas se instanciaban con anclajes por defecto al centro (0.5, 0.5) del Content en vez de la parte superior (0.5, 1.0).",
+      "fix_applied": "Reanclaje de tarjetas a (0.5, 1.0) con pivot superior, restablecimiento de verticalNormalizedPosition = 1f y mejora de contraste de tarjetas bloqueadas.",
+      "files_modified": [
+        "Assets/Scripts/UI/AchievementsUI.cs"
+      ],
+      "resolved_date": "2026-09-16T11:40:00",
+      "status": "RESOLVED"
+    },
+    {
+      "id": "BUG-008",
+      "title": "Notificaciones toast y contador de combo activos sobre ventanas modales de ajustes y logros",
+      "category": "UI / HUD",
+      "detected_in": "docs/screenshots/ui_audits/phase41/03_settings_menu.png",
+      "symptom": "Los toasts de nuevo vestigio y el contador de racha de impactos flotaban por encima de la ventana de ajustes y logros.",
+      "root_cause": "SettingsMenuUI no pausaba el juego en OpenSettings(), y NotificationToastUI/ComboStreakHUD no verificaban CanPlayerAct().",
+      "fix_applied": "SettingsMenuUI ahora establece GameState.Paused al abrirse, y NotificationToastUI junto a ComboStreakHUD se ocultan inmediatamente si el jugador no puede actuar.",
+      "files_modified": [
+        "Assets/Scripts/UI/SettingsMenuUI.cs",
+        "Assets/Scripts/UI/NotificationToastUI.cs",
+        "Assets/Scripts/UI/ComboStreakHUD.cs"
+      ],
+      "resolved_date": "2026-09-16T11:42:00",
+      "status": "RESOLVED"
+    }
+  ]
+}
