@@ -1,11 +1,12 @@
 {
     "project": "Thief & Lore",
     "daily_token_quota_target": "30%",
-    "current_phase": 41,
-    "agent_status": "Fase 41 completada: Diagnóstico mediante capturas ingame nativas, ocultación contextual de HUD/toasts, corrección de ScrollRect en logros y radio de aggro en jefes",
-    "last_updated": "2026-09-16T11:45:00",
-    "total_estimated_tokens": "150.3k",
+    "current_phase": 42,
+    "agent_status": "Fase 42 completada: Generación e integración en runtime de sprites PixelLab para Mercader Nómada, Cofre Arcano de Botín y Reliquia Astrolabio Astral, con compilación y despliegue a Itch.io",
+    "last_updated": "2026-09-16T14:35:00",
+    "total_estimated_tokens": "153.8k",
     "recently_completed": [
+        "TASK-072: Generación e Integración de Arte PixelLab: Mercader Nómada, Cofre de Botín Arcano y Reliquia Astrolabio (~3.5k tokens)",
         "TASK-071: Diagnóstico y Pulido Visual Ingame de HUD, Modales, Aggro de Jefes y Registro de Logros (~3.5k tokens)",
         "TASK-070: Vinculación en Runtime de Sprites PixelLab y Tileset Solaria Capital (~3.5k tokens)",
         "TASK-069: Generación e Integración de Arte PixelLab (Sprites y Tileset Wang) (~3.5k tokens)",
@@ -992,6 +993,23 @@
             ],
             "acceptance_criteria": "Conexión dinámica en tiempo de ejecución de los sprites PixelLab para protagonista (Thief of Lore), jefe primordial (Aethelred Champion), y drones/hechiceros; generación de tileset Wang para la capital imperial Solaria/CelestialBastion y segmentación de baldosas de suelo, muros y pilares.",
             "verification": "Compilación limpia en StandaloneWindows64 y 0 errores o excepciones en Player.log tras prueba de ejecución de 8s."
+        },
+        {
+            "id": "TASK-072",
+            "phase": 42,
+            "title": "Generación e Integración de Arte PixelLab: Mercader Nómada, Cofre Arcano de Botín y Reliquia Astrolabio Astral",
+            "status": "completed",
+            "estimated_tokens": "3.5k",
+            "files": [
+                "Assets/Art/Sprites/nomad_merchant_south.png",
+                "Assets/Art/Sprites/arcane_loot_chest.png",
+                "Assets/Art/Sprites/relic_astral_astrolabe.png",
+                "Assets/Scripts/World/MemoryEchoMerchant.cs",
+                "Assets/Scripts/World/LootChest2D.cs",
+                "Assets/Scripts/Items/ItemData.cs"
+            ],
+            "acceptance_criteria": "Generación con MCP PixelLab de sprites para el mercader nómada con linterna arcana, cofre de botín con herrajes dorados/runas e icono de astrolabio celestial para reliquias; vinculación en tiempo de ejecución sustituyendo marcadores procedurales con fallback seguro.",
+            "verification": "Compilación limpia en StandaloneWindows64 y 0 errores o excepciones en Player.log tras prueba de ejecución de 8s; despliegue exitoso con Butler a canal Windows en Itch.io."
         }
     ]
 }
