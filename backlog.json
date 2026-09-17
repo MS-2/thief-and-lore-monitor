@@ -1,11 +1,12 @@
 {
     "project": "Thief & Lore",
     "daily_token_quota_target": "30%",
-    "current_phase": 44,
-    "agent_status": "Fase 44 completada: Calibrador de Falla y Modificadores de Herejía Roguelike (tecla P), multiplicador dinámico de botín, compilación StandaloneWindows64 y despliegue en Itch.io",
-    "last_updated": "2026-09-16T22:55:00",
-    "total_estimated_tokens": "160.8k",
+    "current_phase": 45,
+    "agent_status": "Fase 45 completada: Santuarios de Prueba Arcanos (Trial Shrines), nuevos sprites PixelLab (obelisco y esquirla de éter), arena ritual sellada, persistencia de juicios purificados y despliegue en Itch.io",
+    "last_updated": "2026-09-17T00:35:00",
+    "total_estimated_tokens": "164.3k",
     "recently_completed": [
+        "TASK-075: Sistema de Santuarios de Prueba y Desafíos Rituales (Trial Shrines) (~3.5k tokens)",
         "TASK-074: Sistema de Calibrador de Falla y Modificadores de Herejía Roguelike (Heat System) (~3.5k tokens)",
         "TASK-073: Sistema de Talentos Arcanos y Metaprogresión Persistente del Ladrón de Lore (~3.5k tokens)",
         "TASK-072: Generación e Integración de Arte PixelLab: Mercader Nómada, Cofre de Botín Arcano y Reliquia Astrolabio (~3.5k tokens)",
@@ -1051,6 +1052,27 @@
                 "Assets/Scripts/Core/SceneBootstrapper.cs"
             ],
             "acceptance_criteria": "Implementación del Calibrador de Falla y 5 Pactos de Herejía (Velo Umbrío, Frenesí de Ruina, Fortaleza Ancestral, Fragilidad del Umbral, Tributo de Sangre) con escalado de dificultad, multiplicador dinámico de Ecos de Memoria de hasta +160%, modal visual accesible con tecla P y persistencia en SaveData.",
+            "verification": "Compilación limpia en StandaloneWindows64 y 0 errores o excepciones en Player.log tras prueba de ejecución de 8s; despliegue exitoso con Butler a canal Windows en Itch.io."
+        },
+        {
+            "id": "TASK-075",
+            "phase": 45,
+            "title": "Sistema de Santuarios de Prueba y Desafíos Rituales (Trial Shrines)",
+            "status": "completed",
+            "estimated_tokens": "3.5k",
+            "files": [
+                "Assets/Art/Sprites/arcane_trial_obelisk.png",
+                "Assets/Art/Sprites/arcane_trial_obelisk.png.meta",
+                "Assets/Art/Sprites/ether_blessing_shard.png",
+                "Assets/Art/Sprites/ether_blessing_shard.png.meta",
+                "Assets/Scripts/World/TrialShrine2D.cs",
+                "Assets/Scripts/World/TrialShrine2D.cs.meta",
+                "Assets/Scripts/World/StructureGenerator.cs",
+                "Assets/Scripts/Core/SaveData.cs",
+                "Assets/Scripts/Entities/PlayerController2D.cs",
+                "Assets/Scripts/UI/MinimapUI.cs"
+            ],
+            "acceptance_criteria": "Implementación de Santuarios de Prueba rituales (TrialShrine2D) generados en biomas por StructureGenerator, arena sellada con barrera de runas, oleada de guardianes élite (drones y guardianes blindados), lluvia de botín físico escalado por calor de pactos, bendición de expedición y persistencia de santuarios purificados en SaveData.",
             "verification": "Compilación limpia en StandaloneWindows64 y 0 errores o excepciones en Player.log tras prueba de ejecución de 8s; despliegue exitoso con Butler a canal Windows en Itch.io."
         }
     ]
