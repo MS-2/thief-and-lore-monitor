@@ -166,15 +166,16 @@
     </div>
     <div class="stat-card">
       <div class="stat-label">Bugs Auditados & Corregidos</div>
-      <div id="statBugs" class="stat-value" style="color: var(--gold);">8</div>
+      <div id="statBugs" class="stat-value" style="color: var(--gold);">11</div>
     </div>
   </div>
 
   <!-- Navigation Tabs -->
   <div class="nav-tabs">
     <button class="tab-btn active" onclick="switchTab('tab-gallery')">📸 Galería Ingame</button>
+    <button class="tab-btn" onclick="switchTab('tab-sprites')">🎨 Sprites Generados (<span id="tabSpriteCount">6</span>)</button>
     <button class="tab-btn" onclick="switchTab('tab-devlog')">📓 Diario & Hitos</button>
-    <button class="tab-btn" onclick="switchTab('tab-bugs')">🐛 Bugs Resueltos (<span id="tabBugCount">8</span>)</button>
+    <button class="tab-btn" onclick="switchTab('tab-bugs')">🐛 Bugs Resueltos (<span id="tabBugCount">11</span>)</button>
     <button class="tab-btn" onclick="switchTab('tab-tasks')">📊 Backlog Técnico</button>
   </div>
 
@@ -185,32 +186,110 @@
       <span style="font-size: 0.8rem; color: var(--text-muted);">Click en cualquier imagen para ampliar</span>
     </div>
     <div class="gallery-grid">
-      <div class="gallery-card" onclick="openLightbox('screenshots/ui_audits/phase41/01_main_menu.png')">
-        <img class="gallery-thumb" src="screenshots/ui_audits/phase41/01_main_menu.png" alt="Menú Principal">
+      <div class="gallery-card" onclick="openLightbox('screenshots/ui_audits/latest/01_main_menu.png')">
+        <img class="gallery-thumb" src="screenshots/ui_audits/latest/01_main_menu.png" alt="Menú Principal">
         <div class="gallery-info">
           <div class="gallery-title">01. Menú Principal & Expedición</div>
           <div class="gallery-caption">Acceso limpio a partidas guardadas, nueva incursión y navegación de ajustes.</div>
         </div>
       </div>
-      <div class="gallery-card" onclick="openLightbox('screenshots/ui_audits/phase41/02_gameplay_world.png')">
-        <img class="gallery-thumb" src="screenshots/ui_audits/phase41/02_gameplay_world.png" alt="Mundo y Exploración">
+      <div class="gallery-card" onclick="openLightbox('screenshots/ui_audits/latest/02_gameplay_world.png')">
+        <img class="gallery-thumb" src="screenshots/ui_audits/latest/02_gameplay_world.png" alt="Mundo y Exploración">
         <div class="gallery-info">
           <div class="gallery-title">02. Exploración en Mundo Abierto</div>
           <div class="gallery-caption">Personaje pixel art, iluminación URP 2D, baliza primordial, cofres e indicadores de orientación.</div>
         </div>
       </div>
-      <div class="gallery-card" onclick="openLightbox('screenshots/ui_audits/phase41/03_settings_menu.png')">
-        <img class="gallery-thumb" src="screenshots/ui_audits/phase41/03_settings_menu.png" alt="Ajustes del Sistema">
+      <div class="gallery-card" onclick="openLightbox('screenshots/ui_audits/latest/03_inspection_gui.png')">
+        <img class="gallery-thumb" src="screenshots/ui_audits/latest/03_inspection_gui.png" alt="GUI de Inspección">
         <div class="gallery-info">
-          <div class="gallery-title">03. Panel de Ajustes & Accesibilidad</div>
+          <div class="gallery-title">03. Inspector de Entidades & Bestiario</div>
+          <div class="gallery-caption">Tooltip contextual en tiempo real con salud en vivo, rango de maestría del bestiario y debilidades.</div>
+        </div>
+      </div>
+      <div class="gallery-card" onclick="openLightbox('screenshots/ui_audits/latest/04_settings_menu.png')">
+        <img class="gallery-thumb" src="screenshots/ui_audits/latest/04_settings_menu.png" alt="Ajustes del Sistema">
+        <div class="gallery-info">
+          <div class="gallery-title">04. Panel de Ajustes & Accesibilidad</div>
           <div class="gallery-caption">Selector de pantalla completa/ventana, resoluciones, escalado de UI y glifos adaptativos.</div>
         </div>
       </div>
-      <div class="gallery-card" onclick="openLightbox('screenshots/ui_audits/phase41/04_achievements_bounties.png')">
-        <img class="gallery-thumb" src="screenshots/ui_audits/phase41/04_achievements_bounties.png" alt="Registro de Logros">
+      <div class="gallery-card" onclick="openLightbox('screenshots/ui_audits/latest/05_achievements_bounties.png')">
+        <img class="gallery-thumb" src="screenshots/ui_audits/latest/05_achievements_bounties.png" alt="Registro de Logros">
         <div class="gallery-info">
-          <div class="gallery-title">04. Registro de Logros & Maestría</div>
+          <div class="gallery-title">05. Registro de Logros & Maestría</div>
           <div class="gallery-caption">Sistema de maestría persistente por rangos, recompensas de Ecos de Memoria y 12 desafíos.</div>
+        </div>
+      </div>
+      <div class="gallery-card" onclick="openLightbox('screenshots/ui_audits/latest/06_labyrinth_ruins.png')">
+        <img class="gallery-thumb" src="screenshots/ui_audits/latest/06_labyrinth_ruins.png" alt="Muros Laberínticos y Ruinas">
+        <div class="gallery-info">
+          <div class="gallery-title">06. Muros Laberínticos & Arquitectura Táctica</div>
+          <div class="gallery-caption">Estructuras en L, pasillos de trinchera y columnatas defensivas con colisionadores BoxCollider2D.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Tab: Sprites -->
+  <div id="tab-sprites" class="content-section">
+    <div class="section-title">
+      <span>Sprites & Assets Pixel Art Generados (PixelLab AI Toolkit)</span>
+      <span style="font-size: 0.8rem; color: var(--text-muted);">Integrados directamente en el build de Unity 6</span>
+    </div>
+    <div class="gallery-grid" style="grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));">
+      <div class="gallery-card" onclick="openLightbox('sprites/arcane_sentinel_drone.png')">
+        <div style="background: #04070d; display: flex; align-items: center; justify-content: center; height: 160px; padding: 12px;">
+          <img src="sprites/arcane_sentinel_drone.png" alt="Dron Centinela Arcano" style="image-rendering: pixelated; width: 96px; height: 96px; object-fit: contain;">
+        </div>
+        <div class="gallery-info">
+          <div class="gallery-title">⚡ Dron Centinela Arcano</div>
+          <div class="gallery-caption">Unidad aérea de patrulla con disco metálico, lente óptico de fotones y halo de plasma (64x64).</div>
+        </div>
+      </div>
+      <div class="gallery-card" onclick="openLightbox('sprites/arcane_shield_guardian.png')">
+        <div style="background: #04070d; display: flex; align-items: center; justify-content: center; height: 160px; padding: 12px;">
+          <img src="sprites/arcane_shield_guardian.png" alt="Guardián Blindado" style="image-rendering: pixelated; width: 96px; height: 96px; object-fit: contain;">
+        </div>
+        <div class="gallery-info">
+          <div class="gallery-title">🛡 Guardián de Blindaje Arcano</div>
+          <div class="gallery-caption">Infantería pesada de élite con gran escudo frontal de aleación rúnica y armadura acorazada (64x64).</div>
+        </div>
+      </div>
+      <div class="gallery-card" onclick="openLightbox('sprites/nomad_merchant_south.png')">
+        <div style="background: #04070d; display: flex; align-items: center; justify-content: center; height: 160px; padding: 12px;">
+          <img src="sprites/nomad_merchant_south.png" alt="Mercader Nómada" style="image-rendering: pixelated; width: 80px; height: 80px; object-fit: contain;">
+        </div>
+        <div class="gallery-info">
+          <div class="gallery-title">🧙 Mercader Nómada del Vacío</div>
+          <div class="gallery-caption">Viajero interdimensional con linterna arcana y zurrón de reliquias primordiales (64x64).</div>
+        </div>
+      </div>
+      <div class="gallery-card" onclick="openLightbox('sprites/arcane_loot_chest.png')">
+        <div style="background: #04070d; display: flex; align-items: center; justify-content: center; height: 160px; padding: 12px;">
+          <img src="sprites/arcane_loot_chest.png" alt="Cofre de Botín Arcano" style="image-rendering: pixelated; width: 80px; height: 80px; object-fit: contain;">
+        </div>
+        <div class="gallery-info">
+          <div class="gallery-title">📦 Cofre de Reliquias Ancestrales</div>
+          <div class="gallery-caption">Contenedor acorazado con herrajes dorados y cerradura rúnica sellada (64x64).</div>
+        </div>
+      </div>
+      <div class="gallery-card" onclick="openLightbox('sprites/arcane_trial_obelisk.png')">
+        <div style="background: #04070d; display: flex; align-items: center; justify-content: center; height: 160px; padding: 12px;">
+          <img src="sprites/arcane_trial_obelisk.png" alt="Obelisco Ritual de Santuario" style="image-rendering: pixelated; width: 80px; height: 80px; object-fit: contain;">
+        </div>
+        <div class="gallery-info">
+          <div class="gallery-title">✦ Obelisco de Santuario de Prueba</div>
+          <div class="gallery-caption">Monolito ritual tallado en piedra abisal que desata desafíos de combate por oleadas (64x64).</div>
+        </div>
+      </div>
+      <div class="gallery-card" onclick="openLightbox('sprites/relic_astral_astrolabe.png')">
+        <div style="background: #04070d; display: flex; align-items: center; justify-content: center; height: 160px; padding: 12px;">
+          <img src="sprites/relic_astral_astrolabe.png" alt="Astrolabio Astral" style="image-rendering: pixelated; width: 80px; height: 80px; object-fit: contain;">
+        </div>
+        <div class="gallery-info">
+          <div class="gallery-title">🌟 Reliquia: Astrolabio Celestial</div>
+          <div class="gallery-caption">Talismán astral de oro y orbes etéreos que expande el radio de revelación cartográfica (64x64).</div>
         </div>
       </div>
     </div>

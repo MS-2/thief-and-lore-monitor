@@ -1,8 +1,8 @@
-﻿{
+{
   "project": "Thief & Lore",
   "name": "Fixed Bugs Backlog",
-  "last_updated": "2026-09-16T11:58:00",
-  "total_fixed": 8,
+  "last_updated": "2026-09-17T12:45:00",
+  "total_fixed": 11,
   "bugs": [
     {
       "id": "BUG-001",
@@ -124,6 +124,49 @@
         "Assets/Scripts/UI/ComboStreakHUD.cs"
       ],
       "resolved_date": "2026-09-16T11:42:00",
+      "status": "RESOLVED"
+    },
+    {
+      "id": "BUG-009",
+      "title": "Inspector de entidades hostiles y jefes omitido y salud congelada durante combate",
+      "category": "UI / HUD / World Inspector",
+      "detected_in": "Reporte de usuario sobre información en GUI de enemigos",
+      "symptom": "Al pasar el cursor sobre el Campeón Aethelred o Santuarios de Prueba no se mostraba información. Además, la barra de vida en el tooltip quedaba estática al golpear al enemigo.",
+      "root_cause": "WorldInspectorUI no evaluaba BossController2D ni TrialShrine2D, empleaba OverlapPoint simple (bloqueado por terreno) y no refrescaba la salud si el cursor permanecía sobre el objetivo.",
+      "fix_applied": "Implementación de OverlapPointAll con prioridades de objetivo, inclusión de BossController2D y TrialShrine2D, refresco de HP en tiempo real e integración con rangos de maestría del Bestiario.",
+      "files_modified": [
+        "Assets/Scripts/UI/WorldInspectorUI.cs"
+      ],
+      "resolved_date": "2026-09-17T12:45:00",
+      "status": "RESOLVED"
+    },
+    {
+      "id": "BUG-010",
+      "title": "Prompts flotantes de Comerciante y Cofres ocultos tras capas de ordenamiento 2D",
+      "category": "World / Interaction UI",
+      "detected_in": "Reporte de usuario sobre feedback e información de comerciantes y cofres",
+      "symptom": "Los textos de interacción flotantes [E] para comerciar o abrir cofres quedaban ocultos detrás del sprite del mercader, cofre o suelo.",
+      "root_cause": "TextMesh instanciaba MeshRenderer con sortingOrder por defecto (0), quedando ocluido por sprites con sortingOrder 7 y 10.",
+      "fix_applied": "Asignación forzada de sortingOrder = 100 en MeshRenderer para MemoryEchoMerchant y LootChest2D, y ocultación reactiva del prompt al saquear cofres.",
+      "files_modified": [
+        "Assets/Scripts/World/MemoryEchoMerchant.cs",
+        "Assets/Scripts/World/LootChest2D.cs"
+      ],
+      "resolved_date": "2026-09-17T12:45:00",
+      "status": "RESOLVED"
+    },
+    {
+      "id": "BUG-011",
+      "title": "Ausencia de paredes laberínticas y arquitectura de ruinas procedurales en biomas",
+      "category": "World / Procedural Generation",
+      "detected_in": "Auditoría de exploración y feedback de diseño del mundo",
+      "symptom": "El supramundo se sentía plano y excesivamente despejado, con solo 2 a 4 pilares aislados por chunk y sin corredores ni coberturas tácticas.",
+      "root_cause": "BiomeTilemapPainter no ejecutaba generación de muros ni utilizaba wallSprites para trazar ruinas laberínticas.",
+      "fix_applied": "Implementación de SpawnLabyrinthineWalls con esquinas en L, corredores con apertura de paso, cámaras arruinadas y columnatas respetando zonas de paso inter-chunk.",
+      "files_modified": [
+        "Assets/Scripts/World/BiomeTilemapPainter.cs"
+      ],
+      "resolved_date": "2026-09-17T12:45:00",
       "status": "RESOLVED"
     }
   ]
