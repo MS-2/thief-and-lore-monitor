@@ -1,11 +1,12 @@
 {
     "project": "Thief & Lore",
     "daily_token_quota_target": "30%",
-    "current_phase": 43,
-    "agent_status": "Fase 43 completada: Sistema de Talentos Arcanos, Árbol de Habilidades (tecla N), metaprogresión persistente en SaveData, compilación y despliegue en Itch.io",
-    "last_updated": "2026-09-16T15:42:00",
-    "total_estimated_tokens": "157.3k",
+    "current_phase": 44,
+    "agent_status": "Fase 44 completada: Calibrador de Falla y Modificadores de Herejía Roguelike (tecla P), multiplicador dinámico de botín, compilación StandaloneWindows64 y despliegue en Itch.io",
+    "last_updated": "2026-09-16T22:55:00",
+    "total_estimated_tokens": "160.8k",
     "recently_completed": [
+        "TASK-074: Sistema de Calibrador de Falla y Modificadores de Herejía Roguelike (Heat System) (~3.5k tokens)",
         "TASK-073: Sistema de Talentos Arcanos y Metaprogresión Persistente del Ladrón de Lore (~3.5k tokens)",
         "TASK-072: Generación e Integración de Arte PixelLab: Mercader Nómada, Cofre de Botín Arcano y Reliquia Astrolabio (~3.5k tokens)",
         "TASK-071: Diagnóstico y Pulido Visual Ingame de HUD, Modales, Aggro de Jefes y Registro de Logros (~3.5k tokens)",
@@ -1028,6 +1029,28 @@
                 "Assets/Scripts/Core/SceneBootstrapper.cs"
             ],
             "acceptance_criteria": "Implementación del Altar de Memorias con 6 talentos distribuidos en 3 ramas (Sombra, Combate, Resiliencia), costos en Ecos de Memoria, interfaz modal interactiva accesible con tecla N, efectos de ondas de choque radiales, regeneración en balizas y persistencia entre runs.",
+            "verification": "Compilación limpia en StandaloneWindows64 y 0 errores o excepciones en Player.log tras prueba de ejecución de 8s; despliegue exitoso con Butler a canal Windows en Itch.io."
+        },
+        {
+            "id": "TASK-074",
+            "phase": 44,
+            "title": "Sistema de Calibrador de Falla y Modificadores de Herejía Roguelike (Heat System)",
+            "status": "completed",
+            "estimated_tokens": "3.5k",
+            "files": [
+                "Assets/Scripts/Progression/PactsManager.cs",
+                "Assets/Scripts/Progression/PactsManager.cs.meta",
+                "Assets/Scripts/UI/PactsUI.cs",
+                "Assets/Scripts/UI/PactsUI.cs.meta",
+                "Assets/Scripts/Core/SaveData.cs",
+                "Assets/Scripts/World/CombatLootDrop2D.cs",
+                "Assets/Scripts/Entities/EnemyAI2D.cs",
+                "Assets/Scripts/Entities/BossController2D.cs",
+                "Assets/Scripts/Entities/HealthSystem.cs",
+                "Assets/Scripts/World/FogOfWar2D.cs",
+                "Assets/Scripts/Core/SceneBootstrapper.cs"
+            ],
+            "acceptance_criteria": "Implementación del Calibrador de Falla y 5 Pactos de Herejía (Velo Umbrío, Frenesí de Ruina, Fortaleza Ancestral, Fragilidad del Umbral, Tributo de Sangre) con escalado de dificultad, multiplicador dinámico de Ecos de Memoria de hasta +160%, modal visual accesible con tecla P y persistencia en SaveData.",
             "verification": "Compilación limpia en StandaloneWindows64 y 0 errores o excepciones en Player.log tras prueba de ejecución de 8s; despliegue exitoso con Butler a canal Windows en Itch.io."
         }
     ]
