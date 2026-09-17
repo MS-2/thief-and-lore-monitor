@@ -1,8 +1,8 @@
 {
   "project": "Thief & Lore",
   "name": "Fixed Bugs Backlog",
-  "last_updated": "2026-09-17T12:45:00",
-  "total_fixed": 11,
+  "last_updated": "2026-09-17T15:35:00",
+  "total_fixed": 13,
   "bugs": [
     {
       "id": "BUG-001",
@@ -167,6 +167,38 @@
         "Assets/Scripts/World/BiomeTilemapPainter.cs"
       ],
       "resolved_date": "2026-09-17T12:45:00",
+      "status": "RESOLVED"
+    },
+    {
+      "id": "BUG-012",
+      "title": "Colisiones fantasma y paredes invisibles por desajuste de collider-sprite, ausencia de suelo continuo e invasión del santuario",
+      "category": "World / Collision & Generation",
+      "detected_in": "Reporte de usuario: 'ahora parece que hay paredes invisibles, me parece un bug'",
+      "symptom": "El jugador colisionaba con obstáculos invisibles a medio metro de las paredes; en biomas oscuros los muros no tenían contraste con el fondo y aparecían muros dentro del santuario inicial.",
+      "root_cause": "Sprites de pared de 16x16 px recibían BoxCollider2D de 2x2 unidades (0.5m de muro invisible por lado); suelo de chunk no escalaba ni repetía textura dejando el 95% del chunk en vacío negro; chunks adyacentes generaban muros a <10m de spawn sin respetar radio euclidiano.",
+      "fix_applied": "Escalado automático de sprites de muro a 2.0x2.0m coincidiendo exactamente con BoxCollider2D, bisel visual superior y sombra de contraste, suelo continuo tiled en 32x32m por chunk, y radio de exclusión euclidiana de 14m/18m alrededor del spawn.",
+      "files_modified": [
+        "Assets/Scripts/World/BiomeTilemapPainter.cs",
+        "Assets/Scripts/World/StructureGenerator.cs"
+      ],
+      "resolved_date": "2026-09-17T15:35:00",
+      "status": "RESOLVED"
+    },
+    {
+      "id": "BUG-013",
+      "title": "Navegación poco intuitiva y ausencia de Minimapa Radar HUD en tiempo real durante gameplay",
+      "category": "UI / HUD & Navigation",
+      "detected_in": "Reporte de usuario: 'el mapa no es nada intuitivo'",
+      "symptom": "La navegación era confusa; solo existía una brújula abstracta inerte y un modal estático [M] de bloques de chunks sin indicación de corredores, enemigos o POIs locales.",
+      "root_cause": "No existía componente HUD de radar en vivo en pantalla durante el movimiento y el modal de mapa carecía de leyenda de iconos y marcas de balizas/comerciantes/cofres.",
+      "fix_applied": "Creación de MinimapHUD.cs con radar circular en vivo (orientación de jugador, puntos cardinales, blips de balizas, mercader, cofres, santuarios, enemigos y siluetas de muros), e incorporación de barra de leyenda y badges cartográficos en MinimapUI.cs.",
+      "files_modified": [
+        "Assets/Scripts/UI/MinimapHUD.cs",
+        "Assets/Scripts/UI/MinimapUI.cs",
+        "Assets/Scripts/UI/ExpeditionTrackerHUD.cs",
+        "Assets/Scripts/Core/SceneBootstrapper.cs"
+      ],
+      "resolved_date": "2026-09-17T15:35:00",
       "status": "RESOLVED"
     }
   ]
