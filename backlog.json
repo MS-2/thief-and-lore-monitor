@@ -1178,6 +1178,35 @@
                                 ],
                       "acceptance_criteria":  "Clasificación de reliquias por afinidad (Astral, Abisal, Tecnológica), activación de efectos de resonancia al equipar 2+ reliquias afines (onda celestial en dash, vampirismo en impactos y arco eléctrico en cadena), maestría pura duplicada con 3 reliquias afines, widget RelicSynergyHUD reactivo, equipamiento interactivo en el Códice, tooltips de sinergia y persistencia en SaveData.",
                       "verification":  "Compilación limpia en StandaloneWindows64 y 0 errores o excepciones en Player.log tras prueba de ejecución de 12s; despliegue exitoso con Butler a canal Windows en Itch.io."
+                  },
+                  {
+                      "id":  "TASK-080",
+                      "phase":  51,
+                      "title":  "Auto-Layout de Inspección de Mundo, Exclusión de HUD y Rediseño de Suelo Continuo",
+                      "status":  "completed",
+                      "estimated_tokens":  "3.5k",
+                      "files":  [
+                                    "Assets/Scripts/UI/WorldInspectorUI.cs",
+                                    "Assets/Scripts/UI/OffscreenIndicator2D.cs",
+                                    "automation/generate_biome_art.py",
+                                    "automation/sync_art_pipeline.ps1"
+                                ],
+                      "acceptance_criteria":  "WorldInspectorUI con auto-layout dinámico y side-car lateral sin clipping ni oclusión de NPCs, zona de exclusión rectangular en OffscreenIndicator2D para no solapar la barra de salud, losas de cantería sin miras/dianas a 16 PPU y sincronización automática de arte.",
+                      "verification":  "Compilación limpia en StandaloneWindows64 y suite de capturas 100% libre de colisiones visuales."
+                  },
+                  {
+                      "id":  "TASK-081",
+                      "phase":  52,
+                      "title":  "Generación de Ruinas Laberínticas con Nichos de Cofres y Arte de Paredes Top-Down 3/4",
+                      "status":  "completed",
+                      "estimated_tokens":  "3.5k",
+                      "files":  [
+                                    "Assets/Scripts/World/BiomeTilemapPainter.cs",
+                                    "automation/generate_biome_art.py",
+                                    "automation/sync_art_pipeline.ps1"
+                                ],
+                      "acceptance_criteria":  "Generación de 5 patrones arquitectónicos laberínticos con nichos de botín seguros, paredes top-down con perspectiva 3/4 decoradas temáticamente por bioma, sincronización y validación limpia de runtime.",
+                      "verification":  "Compilación limpia en StandaloneWindows64, verificación de capturas 06_labyrinth_ruins.png y Player.log limpio."
                   }
               ]
 }
