@@ -1,11 +1,12 @@
 {
     "project": "Thief & Lore",
     "daily_token_quota_target": "30%",
-    "current_phase": 45,
-    "agent_status": "Fase 45 completada: Santuarios de Prueba Arcanos (Trial Shrines), nuevos sprites PixelLab (obelisco y esquirla de éter), arena ritual sellada, persistencia de juicios purificados y despliegue en Itch.io",
-    "last_updated": "2026-09-17T00:35:00",
-    "total_estimated_tokens": "164.3k",
+    "current_phase": 46,
+    "agent_status": "Fase 46 completada: Sistema de Bestiario Arcano y Crónicas de Maestría Hostil por rangos (★/★★/★★★), bonificador pasivo de daño (+6%), pestaña interactiva en Códice (tecla C), compilación StandaloneWindows64 y despliegue en Itch.io",
+    "last_updated": "2026-09-17T11:58:00",
+    "total_estimated_tokens": "167.8k",
     "recently_completed": [
+        "[2026-09-17] TASK-076: Sistema de Bestiario Arcano & Crónicas de Maestría Hostil (~3.5k tokens)",
         "[2026-09-17] TASK-075: Sistema de Santuarios de Prueba y Desafíos Rituales (Trial Shrines) (~3.5k tokens)",
         "[2026-09-16] TASK-074: Sistema de Calibrador de Falla y Modificadores de Herejía Roguelike (Heat System) (~3.5k tokens)",
         "[2026-09-16] TASK-073: Sistema de Talentos Arcanos y Metaprogresión Persistente del Ladrón de Lore (~3.5k tokens)",
@@ -1073,6 +1074,23 @@
                 "Assets/Scripts/UI/MinimapUI.cs"
             ],
             "acceptance_criteria": "Implementación de Santuarios de Prueba rituales (TrialShrine2D) generados en biomas por StructureGenerator, arena sellada con barrera de runas, oleada de guardianes élite (drones y guardianes blindados), lluvia de botín físico escalado por calor de pactos, bendición de expedición y persistencia de santuarios purificados en SaveData.",
+            "verification": "Compilación limpia en StandaloneWindows64 y 0 errores o excepciones en Player.log tras prueba de ejecución de 8s; despliegue exitoso con Butler a canal Windows en Itch.io."
+        },
+        {
+            "id": "TASK-076",
+            "phase": 46,
+            "title": "Sistema de Bestiario Arcano & Crónicas de Maestría Hostil",
+            "status": "completed",
+            "estimated_tokens": "3.5k",
+            "files": [
+                "Assets/Scripts/Progression/BestiaryManager.cs",
+                "Assets/Scripts/Progression/BestiaryManager.cs.meta",
+                "Assets/Scripts/Core/SaveData.cs",
+                "Assets/Scripts/Entities/HealthSystem.cs",
+                "Assets/Scripts/UI/CodexUI.cs",
+                "Assets/Scripts/Core/SceneBootstrapper.cs"
+            ],
+            "acceptance_criteria": "Implementación de BestiaryManager para archivar las 5 entidades hostiles (drones centinela, guardianes blindados, acechadores de bioma, campeón Aethelred y árbitro del núcleo), progresión por 3 rangos de maestría con desbloqueo de debilidades elementales, stats, crónicas de lore y bonificador pasivo de +6% de daño, con pestaña interactiva en el Códice (tecla C) y persistencia en SaveData.",
             "verification": "Compilación limpia en StandaloneWindows64 y 0 errores o excepciones en Player.log tras prueba de ejecución de 8s; despliegue exitoso con Butler a canal Windows en Itch.io."
         }
     ]
