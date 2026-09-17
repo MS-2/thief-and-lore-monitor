@@ -1,11 +1,12 @@
 {
     "project":  "Thief \u0026 Lore",
     "daily_token_quota_target":  "30%",
-    "current_phase":  47,
-    "agent_status":  "Enemigos voladores, guardianes, muros laberinticos y fixes de GUI completados",
-    "last_updated":  "2026-09-17T12:53:49",
-    "total_estimated_tokens":  "171.3k",
+    "current_phase":  48,
+    "agent_status":  "Cinturon de consumibles rapidos y frascos arcanos completado (Fase 48)",
+    "last_updated":  "2026-09-17T15:06:09",
+    "total_estimated_tokens":  "174.8k",
     "recently_completed":  [
+                               "[2026-09-17] TASK-078: Sistema de Cinturón de Consumibles y Frascos Arcanos Rápidos (Quick Consumable Belt) (~3.5k tokens)",
                                "[2026-09-17] TASK-077: Generación de Sprites PixelLab, Muros Laberínticos y Corrección GUI de Entidades (~3.5k tokens)",
                                "[2026-09-17] TASK-076: Sistema de Bestiario Arcano \u0026 Crónicas de Maestría Hostil (~3.5k tokens)",
                                "[2026-09-17] TASK-075: Sistema de Santuarios de Prueba y Desafíos Rituales (Trial Shrines) (~3.5k tokens)",
@@ -1092,6 +1093,56 @@
                                     "Assets/Scripts/Core/SceneBootstrapper.cs"
                                 ],
                       "acceptance_criteria":  "Implementación de BestiaryManager para archivar las 5 entidades hostiles (drones centinela, guardianes blindados, acechadores de bioma, campeón Aethelred y árbitro del núcleo), progresión por 3 rangos de maestría con desbloqueo de debilidades elementales, stats, crónicas de lore y bonificador pasivo de +6% de daño, con pestaña interactiva en el Códice (tecla C) y persistencia en SaveData.",
+                      "verification":  "Compilación limpia en StandaloneWindows64 y 0 errores o excepciones en Player.log tras prueba de ejecución de 8s; despliegue exitoso con Butler a canal Windows en Itch.io."
+                  },
+                  {
+                      "id":  "TASK-077",
+                      "phase":  47,
+                      "title":  "Generación de Sprites PixelLab, Muros Laberínticos y Corrección GUI de Entidades",
+                      "status":  "completed",
+                      "estimated_tokens":  "3.5k",
+                      "files":  [
+                                    "Assets/Art/Sprites/arcane_sentinel_drone.png",
+                                    "Assets/Art/Sprites/arcane_sentinel_drone.png.meta",
+                                    "Assets/Art/Sprites/arcane_shield_guardian.png",
+                                    "Assets/Art/Sprites/arcane_shield_guardian.png.meta",
+                                    "Assets/Scripts/Entities/RangedDroneEnemy2D.cs",
+                                    "Assets/Scripts/Entities/ShieldedEliteEnemy2D.cs",
+                                    "Assets/Scripts/World/BiomeTilemapPainter.cs",
+                                    "Assets/Scripts/World/MemoryEchoMerchant.cs",
+                                    "Assets/Scripts/World/LootChest2D.cs",
+                                    "Assets/Scripts/UI/WorldInspectorUI.cs",
+                                    "Assets/Scripts/Core/AutoScreenshotCapture.cs"
+                                ],
+                      "acceptance_criteria":  "Generación e integración de sprites transparentes 64x64 para dron centinela y guardián blindado, arquitectura de muros laberínticos procedurales tácticos en BiomeTilemapPainter con colisionadores, corrección de bugs de GUI e inspección de enemigos, mercader y cofres, actualización de galería de sprites y blog.",
+                      "verification":  "Compilación limpia en StandaloneWindows64 y 0 errores o excepciones en Player.log tras prueba de ejecución de 8s; despliegue exitoso con Butler a canal Windows en Itch.io."
+                  },
+                  {
+                      "id":  "TASK-078",
+                      "phase":  48,
+                      "title":  "Sistema de Cinturón de Consumibles y Frascos Arcanos Rápidos (Quick Consumable Belt)",
+                      "status":  "completed",
+                      "estimated_tokens":  "3.5k",
+                      "files":  [
+                                    "Assets/Art/Sprites/vial_vital_essence.png",
+                                    "Assets/Art/Sprites/vial_vital_essence.png.meta",
+                                    "Assets/Art/Sprites/vial_fury_tonic.png",
+                                    "Assets/Art/Sprites/vial_fury_tonic.png.meta",
+                                    "Assets/Art/Sprites/vial_umbral_veil.png",
+                                    "Assets/Art/Sprites/vial_umbral_veil.png.meta",
+                                    "Assets/Scripts/Items/QuickBeltManager.cs",
+                                    "Assets/Scripts/Items/QuickBeltManager.cs.meta",
+                                    "Assets/Scripts/UI/QuickBeltHUD.cs",
+                                    "Assets/Scripts/UI/QuickBeltHUD.cs.meta",
+                                    "Assets/Scripts/World/CombatLootDrop2D.cs",
+                                    "Assets/Scripts/World/MemoryEchoMerchant.cs",
+                                    "Assets/Scripts/Core/SaveData.cs",
+                                    "Assets/Scripts/Core/SceneBootstrapper.cs",
+                                    "Assets/Scripts/Entities/PlayerController2D.cs",
+                                    "Assets/Scripts/Entities/AbilitySystem2D.cs",
+                                    "Assets/Scripts/Entities/HealthSystem.cs"
+                                ],
+                      "acceptance_criteria":  "Implementación de cinturón de consumibles rápidos utilizables con tecla [R] o botón D-Pad, 3 tipos de viales (Esencia Vital +45 HP y disipación de estados alterados, Tónico de Furia Rúnica +35% velocidad y +12 daño, Velo Umbrío invulnerabilidad táctica 3.5s), selector cíclico con [Tab]/[V], cooldown visual radial en HUD, recolección como loot físico magnético, abastecimiento en el Mercader Nómada y persistencia en SaveData.",
                       "verification":  "Compilación limpia en StandaloneWindows64 y 0 errores o excepciones en Player.log tras prueba de ejecución de 8s; despliegue exitoso con Butler a canal Windows en Itch.io."
                   }
               ]
