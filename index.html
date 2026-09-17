@@ -79,6 +79,8 @@
     .timeline-item { background: var(--card-bg); border: 1px solid var(--border); border-left: 4px solid var(--cyan); border-radius: 8px; padding: 14px 16px; margin-bottom: 12px; }
     .timeline-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px; }
     .timeline-title { font-size: 0.95rem; font-weight: 700; color: #fff; }
+    .timeline-meta { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
+    .timeline-date { font-size: 0.75rem; font-weight: 700; color: var(--gold); background: rgba(255, 215, 0, 0.1); padding: 2px 8px; border-radius: 4px; border: 1px solid rgba(255, 215, 0, 0.25); }
     .timeline-tag { font-size: 0.7rem; font-weight: 700; color: var(--cyan); background: rgba(0, 240, 255, 0.1); padding: 2px 8px; border-radius: 4px; border: 1px solid rgba(0, 240, 255, 0.3); }
 
     /* Bug Cards */
@@ -139,9 +141,6 @@
       Este proyecto es desarrollado de forma transparente con un pipeline de IA autónomo y Unity 6. Cada donativo nos ayuda a costear el almacenamiento en la nube, herramientas de arte y computación necesarias para completarlo.
     </div>
     <div class="support-buttons">
-      <a class="btn-donate-kofi" href="https://ko-fi.com/thiefandlore" target="_blank">
-        ☕ Invítame un café en Ko-fi
-      </a>
       <a class="btn-donate-bmc" href="https://www.buymeacoffee.com/juanjosejjb" target="_blank">
         ⚡ Buy Me a Coffee
       </a>
@@ -301,13 +300,52 @@
       // Render Devlog
       const devlogList = document.getElementById('devlogList');
       devlogList.innerHTML = '';
+
+      const getEntryDate = (entry) => {
+        if (typeof entry === 'object' && entry.date) return entry.date;
+        const raw = typeof entry === 'object' ? (entry.title || entry.text || '') : String(entry);
+        const matchDate = raw.match(/^\[(.*?)\]/);
+        if (matchDate) {
+          const parts = matchDate[1].split('-');
+          if (parts.length === 3) {
+            const months = ['Ene', 'Feb', 'Mar', 'Abr', 'May', 'Jun', 'Jul', 'Ago', 'Sep', 'Oct', 'Nov', 'Dic'];
+            const mIdx = parseInt(parts[1], 10) - 1;
+            return `${parts[2]} ${months[mIdx] || parts[1]} ${parts[0]}`;
+          }
+          return matchDate[1];
+        }
+        const matchTask = raw.match(/TASK-(\d+)/);
+        if (matchTask) {
+          const num = parseInt(matchTask[1], 10);
+          if (num >= 75) return "17 Sep 2026";
+          if (num >= 70) return "16 Sep 2026";
+          if (num >= 66) return "15 Sep 2026";
+          if (num >= 50) return "14 Sep 2026";
+          if (num >= 35) return "13 Sep 2026";
+          if (num >= 20) return "08 Sep 2026";
+          if (num >= 10) return "05 Sep 2026";
+          return "04 Sep 2026";
+        }
+        return "Sep 2026";
+      };
+
+      const getEntryTitle = (entry) => {
+        const raw = typeof entry === 'object' ? (entry.title || entry.text || '') : String(entry);
+        return raw.replace(/^\[.*?\]\s*/, '');
+      };
+
       (data.recently_completed || []).forEach(entry => {
         const div = document.createElement('div');
         div.className = 'timeline-item';
+        const dateStr = getEntryDate(entry);
+        const titleStr = getEntryTitle(entry);
         div.innerHTML = `
           <div class="timeline-header">
-            <div class="timeline-title">${entry}</div>
-            <span class="timeline-tag">Completado</span>
+            <div class="timeline-title">${titleStr}</div>
+            <div class="timeline-meta">
+              <span class="timeline-date">📅 ${dateStr}</span>
+              <span class="timeline-tag">Completado</span>
+            </div>
           </div>
         `;
         devlogList.appendChild(div);
