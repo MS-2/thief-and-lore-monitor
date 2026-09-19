@@ -1,11 +1,12 @@
 {
     "project":  "Thief \u0026 Lore",
     "daily_token_quota_target":  "30%",
-    "current_phase":  54,
-    "agent_status":  "Corrección de UI de Mercader, muros y baldosas + Compilación y Despliegue WebGL en Itch.io completado",
-    "last_updated":  "2026-09-18T11:20:00",
-    "total_estimated_tokens":  "199.3k",
+    "current_phase":  55,
+    "agent_status":  "Sistema de Localización Multilingüe i18n y Selector de Idioma en Ajustes completado (Fase 55)",
+    "last_updated":  "2026-09-19T05:05:00",
+    "total_estimated_tokens":  "202.8k",
     "recently_completed":  [
+                               "[2026-09-19] TASK-084: Sistema de Localización Multilingüe i18n y Selector de Idioma en Ajustes (~3.5k tokens)",
                                "[2026-09-18] TASK-083: Certificación Gold Master, Empaquetado Comercial 1.0 y Cierre de Producción (~3.5k tokens)",
                                "[2026-09-18] TASK-082: Perfilado de Rendimiento de Memoria, Telemetría HUD [F3] y Optimización de Pools (~3.5k tokens)",
                                "[2026-09-17] TASK-081: Generación de Ruinas Laberínticas con Nichos de Cofres y Arte de Paredes Top-Down 3/4 (~3.5k tokens)",
@@ -1240,6 +1241,22 @@
                                 ],
                       "acceptance_criteria":  "Actualización de metadata a v1.0.0 Gold Master y MS-2 Studios, branding oficial en MainMenuUI, verificación de integridad con unity projects verify, compilación StandaloneWindows64 limpia, Player.log con 0 errores, suite completa de 8 capturas validada y despliegue final.",
                       "verification":  "Compilación exitosa StandaloneWindows64, Player.log limpio en MS-2 Studios, verificación de 8 capturas y publicación a Itch.io v1.0.0."
+                  },
+                  {
+                      "id":  "TASK-084",
+                      "phase":  55,
+                      "title":  "Sistema de Localización Multilingüe i18n y Selector de Idioma en Ajustes",
+                      "status":  "completed",
+                      "estimated_tokens":  "3.5k",
+                      "files":  [
+                                    "Assets/Scripts/Core/LocalizationManager.cs",
+                                    "Assets/Scripts/UI/LocalizedText.cs",
+                                    "Assets/Scripts/UI/SettingsMenuUI.cs",
+                                    "Assets/Scripts/UI/MainMenuUI.cs",
+                                    "Assets/Scripts/World/MemoryEchoMerchant.cs"
+                                ],
+                      "acceptance_criteria":  "Mánager de localización reactivo LocalizationManager con persistencia en PlayerPrefs, componente LocalizedText para actualización instantánea en vivo, selector de idioma [ES / EN] en SettingsMenuUI, vinculación bilingüe en MainMenuUI y diálogos del Mercader Nómada, validación de integridad limpia con unity projects verify, compilación StandaloneWindows64 y suite de capturas con 0 errores.",
+                      "verification":  "Compilación exitosa en StandaloneWindows64, verificación de Player.log sin errores y despliegue sincronizado."
                   }
               ]
 }
